@@ -3,154 +3,1103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hà Nội 4 ngày • Lịch trình du lịch</title>
+<title>Hà Nội × Ninh Bình · Hành trình 4 ngày</title>
+<meta name="description" content="Bạn đồng hành Hà Nội – Ninh Bình: lịch trình 4 ngày, điểm đến, café và những khoảng nghỉ.">
 <style>
-:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#667085;--line:#e6eaf0;--accent:#b42318;--nav:#111827;--soft:#fff4ed}
-*{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:linear-gradient(135deg,#111827,#26364f);color:#fff;padding:34px 22px 28px}
-.wrap{max-width:1180px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
-h1{margin:7px 0 7px;font-size:clamp(28px,5vw,48px)} header p{margin:0;max-width:800px;color:#d7deea}
-.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap}
-.tabs .wrap{display:flex;gap:5px;padding:8px 12px}.tab{border:0;background:transparent;padding:11px 14px;border-radius:10px;font-weight:700;cursor:pointer;color:#475467}
-.tab.active{background:#111827;color:#fff}.panel{display:none;padding:24px 16px 50px}.panel.active{display:block}
-.day{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:0 0 18px;overflow:hidden;box-shadow:0 6px 20px rgba(16,24,40,.05)}
-.dayhead{padding:18px 20px;background:#fbfcfe;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:end}
-.dayhead h2{margin:0;font-size:21px}.dayhead span{color:var(--muted);font-size:13px}
-.route{display:grid;grid-template-columns:80px 62px 1fr 115px;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line);align-items:center}
-.route:last-child{border-bottom:0}.time{font-weight:800}.code{font-size:12px;font-weight:800;color:var(--accent);background:var(--soft);padding:5px 7px;border-radius:8px;text-align:center}
-.route b{display:block}.route small{color:var(--muted);line-height:1.45}.duration{font-size:13px;color:#475467;text-align:right}
-.note{margin:0 0 18px;padding:14px 16px;border-left:4px solid #f79009;background:#fffaeb;border-radius:10px;color:#7a2e0e}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 18px rgba(16,24,40,.04)}
-.card h3{margin:0 0 8px}.meta{font-size:13px;color:var(--muted);line-height:1.6}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2f6;margin:3px 4px 3px 0;font-size:12px;font-weight:700}
-.card p{line-height:1.6;font-size:14px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;padding:9px 11px;border-radius:9px;background:#111827;color:white;font-size:13px;font-weight:800}.btn.alt{background:#fff;color:#111827;border:1px solid #d0d5dd}
-.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.stat b{font-size:20px;display:block}.stat span{font-size:12px;color:var(--muted)}
-footer{padding:25px 16px;color:#667085;text-align:center;font-size:12px}
-@media(max-width:700px){.route{grid-template-columns:65px 52px 1fr}.duration{grid-column:3;text-align:left}.summary{grid-template-columns:1fr 1fr}.dayhead{display:block}.dayhead span{display:block;margin-top:5px}}
+:root{--cream:#f6f1e7;--paper:#fffcf6;--red:#702e39;--gold:#987236;--ink:#292c27;--muted:#67695e;--jade:#335e53;--line:#ded8ca;--day:var(--red)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 'Segoe UI',Arial,sans-serif}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{font:inherit}
+a{color:var(--red);text-underline-offset:4px}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+.wrap{width:min(1120px,100%);margin:auto}
+.skip{position:fixed;top:-100px;background:var(--paper);padding:12px;z-index:100}
+.skip:focus{top:8px}
+
+header{position:relative;overflow:hidden;background:#273f37;color:var(--paper);padding:26px 28px 40px}
+header:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 25%,#c8aa6630,transparent 55%)}
+.brand{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #ffffff30;padding-bottom:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.brand span:last-child{color:#d2c4a7}
+.hero-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;position:relative;z-index:1;padding-top:38px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+header .eyebrow{color:#dcc79f}
+h1,h2,h3{font-family:'Times New Roman',Georgia,serif;font-weight:400;line-height:1.15}
+h1{font-size:clamp(46px,6.7vw,78px);margin:16px 0 22px;letter-spacing:-.045em}
+h1 em{color:#e0c595;font-weight:400}
+header p{max-width:470px;color:#e0e4d9;margin:0 0 24px}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;font-size:14px}
+.hero-meta span{padding:0 18px;border-left:1px solid #ffffff40}
+.hero-meta span:first-child{padding-left:0;border:0}
+.hero-meta strong{color:#ecd7b2}
+.hero-art{width:100%;max-height:310px;display:block}
+.art-caption{font-size:12px;letter-spacing:.12em;text-align:center;color:#d2c4a7}
+.journey{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;font-size:13px;color:#d3dace;position:relative;z-index:1}
+.journey a{color:inherit;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid #819385}
+.journey span{color:#cbb88c}
+
+.tabs{position:sticky;top:0;z-index:20;background:#fffcf6f5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.tabs .wrap{display:flex;gap:6px;padding:8px 20px;overflow-x:auto;scrollbar-width:thin}
+.tab{border:0;background:transparent;border-radius:6px;padding:12px 18px;min-height:46px;white-space:nowrap;color:var(--muted);cursor:pointer;font-size:14px;font-weight:600}
+.tab.active{background:var(--red);color:#fff}
+.tab:hover:not(.active){background:#ece5d8}
+.panel{padding:36px 24px 60px;animation:enter .25s ease}
+.js .panel[hidden]{display:none}
+.panel h2{font-size:32px;margin:0 0 12px}
+.section-head{margin-bottom:24px}
+.section-head p{color:var(--muted);font-size:14px;margin:10px 0 0}
+.section-head .eyebrow{margin-bottom:10px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:18px 0}
+.day{--day:var(--red);border:1px solid var(--line);border-radius:14px;background:var(--paper);margin-bottom:28px;overflow:hidden}
+.day[data-day='2']{--day:#796033}
+.day[data-day='3']{--day:var(--jade)}
+.day[data-day='4']{--day:#7e6152}
+.dayhead{display:flex;gap:18px;align-items:center;padding:26px 28px 20px}
+.day-number{font:italic 52px/1 Georgia,serif;color:var(--day);opacity:.8}
+.dayhead h2{font-size:27px;margin:4px 0}
+.dayhead .eyebrow{color:var(--day)}
+.dayhead p{font-size:14px;color:var(--muted);margin:8px 0 0}
+.info-bar{display:flex;gap:8px 20px;flex-wrap:wrap;background:#ece9df;padding:12px 28px;font-size:13px;color:#4b5149}
+.day-intro{font-size:14px;margin:16px 28px;color:var(--muted)}
+.period{display:flex;align-items:center;gap:12px;padding:20px 28px 12px;font-size:11px;letter-spacing:.17em;font-weight:700;color:var(--day)}
+.period:after{content:'';height:1px;background:var(--line);flex:1}
+.timeline{padding:0 28px 18px}
+.route{display:grid;grid-template-columns:90px 28px minmax(0,1fr);gap:12px;position:relative;padding:11px 0 16px}
+.time{font-size:14px;font-weight:700;color:var(--day);padding-top:3px;font-variant-numeric:tabular-nums}
+.time small{display:block;color:var(--muted);font-size:11px;font-weight:400}
+.marker{position:relative;display:flex;justify-content:center}
+.marker:after{content:'';position:absolute;top:29px;bottom:-28px;width:1px;background:var(--line)}
+.route:last-child .marker:after{bottom:0}
+.dot{width:28px;height:28px;background:var(--cream);border:1px solid var(--line);border-radius:50%;font-size:14px;display:grid;place-items:center;z-index:1}
+.route-title{font-size:17px;font-weight:650;line-height:1.4}
+.route-title a{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:5px;padding:2px 0;min-height:44px}
+.route-title a:hover{color:var(--red);text-decoration:underline}
+.route-description{font-size:14px;color:var(--muted);margin:0 0 7px;max-width:740px}
+.duration{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#eee2c9;color:#634b23;font-size:11px;border-radius:4px;padding:2px 7px;font-weight:600}
+.badge.optional{background:#eeebe3;color:#65675c}
+.badge.recommended{background:#e4ece6;color:#355e4f}
+.transfer .route-title{font-size:15px;color:var(--muted)}
+.transfer .dot{background:transparent}
+.day-end{border-top:1px solid var(--line);padding:14px 28px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:13px;color:var(--muted)}
+.text-link{display:inline-flex;min-height:44px;align-items:center;font-weight:600}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;min-width:0;scroll-margin-top:100px;transition:transform .18s,box-shadow .18s}
+.card h3{font-size:25px;margin:12px 0}
+.card p{font-size:15px;margin:12px 0;color:#51574e}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.card-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#eae6d8;font-size:22px;flex-shrink:0}
+.meta{font-size:14px;color:var(--muted)}
+.pill{display:inline-block;font-size:12px;background:#eeeade;border-radius:4px;padding:3px 8px;margin:0 4px 7px 0}
+.facts{display:grid;gap:7px;font-size:14px;color:#586153;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.btn{min-height:46px;padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--jade);color:#fff;text-decoration:none;border:1px solid var(--jade);border-radius:6px;font-size:14px;font-weight:600;transition:background .18s,transform .18s}
+.btn.alt{background:transparent;color:var(--jade)}
+.btn:hover{background:#22473c;color:white;transform:translateY(-2px)}
+.back-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px;margin-bottom:18px}
+.note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
+.note-card{border:1px solid var(--line);background:#eee8dc;padding:20px;border-radius:10px;font-size:14px}
+.note-card h3{font-family:inherit;font-weight:650;font-size:15px;margin:8px 0}
+.note-card p{margin:7px 0;color:#5b5e52}
+.note-card a{font-size:13px;display:inline-flex;align-items:center;min-height:44px}
+.weather-strip{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.weather-strip span{font-size:13px;border:1px solid var(--line);background:#fff9e9;border-radius:5px;padding:8px 12px}
+.airport{background:#e4ece5;border:1px solid #bdcfc1;border-radius:10px;padding:22px;margin:20px 0}
+.airport h3{font-size:23px;margin:0 0 10px}
+.airport p{font-size:14px;margin:8px 0}
+.airport-steps{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.airport-steps span{background:#f7faf4;padding:9px 12px;font-size:13px;border-radius:5px}
+.source{font-size:12px!important;color:var(--muted)!important}
+.source a{overflow-wrap:anywhere}
+.panel>.info-bar{border-radius:7px;margin-bottom:24px}
+.notice{background:#f0e5d3;border-left:3px solid var(--gold);padding:14px 18px;border-radius:4px;font-size:14px;margin:18px 0}
+.card:target{outline:2px solid var(--gold)}
+footer{padding:28px 24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center}
+footer strong{display:block;font:22px Georgia,serif;color:var(--red);margin-bottom:8px}
+
+@media(hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 12px 25px #342d1810}
+}
+@keyframes enter{from{opacity:.4;transform:translateY(5px)}
+to{opacity:1;transform:none}
+}
+.reveal{animation:enter .35s ease}
+
+@media(min-width:900px){.hero-art{min-height:290px}
+.plan-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px}
+.plan-aside{position:sticky;top:94px;align-self:start}
+.plan-aside a{display:flex;min-height:48px;align-items:center;border-bottom:1px solid var(--line);text-decoration:none;font-size:14px}
+.plan-aside p{font-size:13px;color:var(--muted)}
+}
+
+@media(max-width:899px){.plan-aside{display:none}
+.hero-layout{gap:12px}
+.note-grid{grid-template-columns:1fr 1fr}
+.hero-art{height:235px}
+.brand{font-size:10px}
+}
+
+@media(max-width:600px){header{padding:20px 20px 28px}
+.brand span:last-child{display:none}
+.hero-layout{grid-template-columns:1fr;padding-top:28px}
+h1{font-size:54px;margin:12px 0 18px}
+.hero-art{height:175px;margin-top:8px}
+.art-caption{display:none}
+.hero-meta{font-size:13px}
+.hero-meta span{padding:0 10px}
+.journey{gap:8px;margin-top:18px;font-size:12px}
+.tabs .wrap{padding:7px 12px}
+.tab{padding:10px 14px}
+.panel{padding:26px 14px 40px}
+.panel h2{font-size:29px}
+.cards,.note-grid{grid-template-columns:1fr}
+.dayhead{padding:22px 18px 16px;gap:14px}
+.dayhead h2{font-size:24px}
+.day-number{font-size:43px}
+.info-bar{padding:12px 18px;gap:6px 14px}
+.day-intro{margin:14px 18px}
+.timeline{padding:0 16px 14px}
+.period{padding:18px 18px 10px}
+.route{grid-template-columns:64px 24px minmax(0,1fr);gap:9px}
+.dot{width:24px;height:24px;font-size:12px}
+.time{font-size:13px}
+.route-title{font-size:16px}
+.route-description{font-size:14px}
+.day-end{padding:12px 18px;flex-wrap:wrap}
+.card{padding:20px}
+.actions .btn{flex:1 1 100%}
+.note-grid{margin:18px 0}
+.card h3{font-size:25px}
+.airport{padding:18px}
+.airport-steps{display:grid;gap:8px}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*,*:before,*:after{animation:none!important;transition:none!important}
+}
+
+@media print{.tabs,.journey,.plan-aside,.back-link,.skip{display:none!important}
+.js .panel[hidden]{display:block!important}
+.panel{padding:20px 0}
+.card,.day{break-inside:avoid}
+header{background:white;color:black}
+.hero-art{display:none}
+header p,header .eyebrow{color:black}
+.hero-layout{display:block}
+.cards{display:block}
+.card{margin-bottom:14px}
+body{background:white}
+}
+
+
+.dated-table{overflow-x:auto;margin:20px 0}.dated-table table{width:100%;border-collapse:collapse;background:var(--paper);font-size:14px}.dated-table th,.dated-table td{padding:14px;text-align:left;border:1px solid var(--line);vertical-align:top}.dated-table th{background:#e4ece5}.dated-table td:first-child{min-width:130px}#dated-info,#trip-events{scroll-margin-top:100px;margin-bottom:32px}@media(max-width:600px){.dated-table table,.dated-table tbody,.dated-table tr,.dated-table td{display:block;width:100%}.dated-table thead{display:none}.dated-table tr{margin-bottom:14px;border:1px solid var(--line);border-radius:8px;overflow:hidden}.dated-table td{border:0;border-bottom:1px solid var(--line)}.dated-table td:first-child{background:#e4ece5}.dated-table td:last-child{border-bottom:0}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<div class="eyebrow">Hanoi • Ninh Binh</div>
-<h1>Hành trình 4 ngày</h1>
-<p>Hà Nội cổ • lịch sử & quân sự • Ninh Bình • café & ẩm thực. Thiết kế theo nhịp tham quan thực tế, có Google Maps cho từng điểm.</p>
-</div></header>
+<a class="skip" href="#main">Đến nội dung</a>
+<header>
+<div class="wrap">
+<div class="brand"><span>Hà Nội × Ninh Bình</span><span>Thứ Năm → Chủ Nhật · sáng đi, tối về</span></div>
+<div class="hero-layout">
+<div>
+<div class="eyebrow">BẠN ĐỒNG HÀNH · MIỀN BẮC VIỆT NAM</div>
+<h1>Bốn ngày.<br><em>Một miền nhớ.</em></h1>
+<p>Qua những con phố cũ, dừng bên một tách café.<br>Rồi tìm chút thảnh thơi giữa núi non Ninh Bình.</p>
+<div class="hero-meta"><span><strong>01–04/10/2026</strong></span><span>Hà Nội + Ninh Bình</span><span>~18 trải nghiệm</span></div></div>
+<div><svg class="hero-art" viewBox="0 0 480 310" role="img" aria-label="Minh họa Tháp Rùa bên mặt hồ và núi non Ninh Bình"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d7bb82"/><stop offset="1" stop-color="#e7d8b4"/></linearGradient><clipPath id="arch">
+<path d="M35 295V155a205 140 0 0 1 410 0v140Z"/></clipPath></defs><g clip-path="url(#arch)">
+<path fill="url(#sky)" d="M0 0h480v310H0z"/><circle cx="333" cy="92" r="31" fill="#f8e9bf"/>
+<path d="M0 211Q50 184 68 116Q94 67 119 157Q131 190 148 137Q177 41 205 156Q227 202 257 156Q284 102 310 169Q345 221 376 131Q409 75 433 170L480 219v91H0Z" fill="#879881"/>
+<path d="M0 233Q62 199 106 228T221 222T340 217T480 230V310H0Z" fill="#4c7466"/>
+<path d="M0 258Q120 237 240 257T480 258v52H0Z" fill="#365c50"/><g fill="none" stroke="#acb59a" opacity=".6">
+<path d="M50 270h80m177 8h100M30 290h110m84 5h109M320 257h80"/></g><g fill="#ead9b4" stroke="#795f44" stroke-width="2">
+<path d="M136 243h106v8H136zM146 205h85v37h-85zM155 177h66v28h-66zM169 155h39v22h-39z"/>
+<path d="m138 205 17-12h66l18 12zm9-28 20-12h44l19 12zm14-23 28-18 28 18z" fill="#795341"/>
+<path d="M161 242v-16a8 8 0 0 1 16 0v16m20 0v-16a8 8 0 0 1 16 0v16M172 204v-15h10v15m14 0v-15h10v15" fill="#496153"/>
+<path d="M184 166v-10h10v10" fill="#496153"/></g>
+<path d="M271 279q30 14 57-3l-5 8h-43z" fill="#d9c392"/>
+<path d="m301 276 8-25m-2 10 17 20" stroke="#d9c392" stroke-width="2"/>
+<path d="M44 105q8-10 16 0q8-10 16 0M240 69q6-7 12 0q6-7 12 0" fill="none" stroke="#666f53" stroke-width="2"/></g>
+<path d="M35 295V155a205 140 0 0 1 410 0v140" fill="none" stroke="#d4ba8444"/>
+<path d="M24 300h432" stroke="#d4ba84"/></svg>
+<div class="art-caption">PHỐ CŨ · MẶT HỒ · NÚI NON</div></div></div>
+<div class="journey">
+<a href="#day-1">01 · Hà Nội cổ</a><span>→</span>
+<a href="#day-2">02 · Di sản & Hồ Tây</a><span>→</span>
+<a href="#day-3">03 · Ninh Bình</a><span>→</span>
+<a href="#day-4">04 · Bảo tàng & về tối</a></div></div>
+</header>
 
-<nav class="tabs"><div class="wrap">
+<nav class="tabs">
+<div class="wrap">
 <button class="tab active" data-tab="plan">Lịch trình</button>
-<button class="tab" data-tab="d1">Ngày 1</button>
-<button class="tab" data-tab="d2">Ngày 2</button>
-<button class="tab" data-tab="d3">Ngày 3 • Ninh Bình</button>
-<button class="tab" data-tab="d4">Ngày 4</button>
-<button class="tab" data-tab="tips">Lưu ý</button>
-</div></nav>
+<button class="tab" data-tab="d1">01/10 · T5</button>
+<button class="tab" data-tab="d2">02/10 · T6</button>
+<button class="tab" data-tab="d3">03/10 · T7</button>
+<button class="tab" data-tab="d4">04/10 · CN</button>
+<button class="tab" data-tab="tips">Thời tiết · Sự kiện</button>
+</div>
+</nav>
 
-<main class="wrap">
+<main class="wrap" id="main">
 <section id="plan" class="panel active">
-<div class="summary">
-<div class="stat"><b>4 ngày</b><span>3 ngày Hà Nội + 1 ngày Ninh Bình</span></div>
-<div class="stat"><b>~18 điểm</b><span>tham quan + ẩm thực + café</span></div>
-<div class="stat"><b>07:00</b><span>khung giờ đẹp để bắt đầu</span></div>
-<div class="stat"><b>Ngày 3</b><span>Tràng An + Hang Múa</span></div>
+<div class="section-head">
+<div class="eyebrow">LỘ TRÌNH CỦA BẠN</div>
+<h2>Đi ít vội. Nhớ nhiều hơn.</h2>
+<p>Chạm tên điểm đến để xem chi tiết & mở Maps. Giờ dưới đây là khung gợi ý, chưa phải lịch đặt dịch vụ.</p></div>
+<div class="notice"><strong>Đã khớp 01–04/10/2026:</strong> Thứ Năm đến Chủ Nhật. Lăng đang tu bổ; Bảo tàng Quân sự nghỉ 02/10 nên chuyển sang sáng 04/10. Ninh Bình giữ 03/10. <a class="text-link" href="#dated-info">Xem dự báo & sự kiện có nguồn →</a></div>
+<div class="legend"><span>⭐ Ưu tiên giữ</span><span>👍 Nên ghé</span><span>✨ Linh hoạt khi mệt hoặc trễ</span></div>
+<div class="plan-layout">
+<div>
+<article class="day" id="day-1" data-day="1">
+<div class="dayhead"><span class="day-number">01</span>
+<div>
+<div class="eyebrow">Thứ Năm · 01/10/2026</div>
+<h2>Hà Nội cổ & những món ngon</h2>
+<p>Đi bộ thong thả, để Hà Nội dẫn lối.</p></div></div>
+<div class="info-bar"><span>🚶 Đi bộ theo cụm</span><span>☕ Café & ẩm thực</span><span>📍 Hoàn Kiếm</span></div>
+<p class="day-intro">Bờ đông Hồ Gươm → Phố cổ → Nhà thờ Lớn. Buổi tối trở lại Phố cổ để cảm nhận nhịp phố khác; chọn quán trên tuyến, không chạy theo nhiều địa chỉ.</p>
+<p class="day-intro">01/10 · Hà Nội: dự báo còn chênh lệch; tối có lựa chọn khai mạc lễ hội 20:00, thay cho Phố cổ. <a class="text-link" href="#dated-info">Nguồn & chi tiết →</a></p>
+<div class="period">Sáng</div>
+<div class="timeline">
+<div class="route ">
+<div class="time">07:00<small>– 11:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">✈</span></div>
+<div>
+<div class="route-title">
+<a href="#arrival">TP.HCM → Hà Nội → khách sạn <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Giờ minh họa; chừa thời gian lấy hành lý và 60–90 phút từ Nội Bài về trung tâm. Gửi đồ nếu chưa được nhận phòng.</p>
+<div class="duration"><span>1.1 · ⏱ Theo chuyến bay</span></div></div></div></div>
+<div class="period">Trưa & chiều</div>
+<div class="timeline">
+<div class="route ">
+<div class="time">11:30<small>– 12:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍜</span></div>
+<div>
+<div class="route-title">
+<a href="#food">Một bát phở Hà Nội <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Ăn gần khách sạn, nghỉ sau chuyến bay. Quán cụ thể sẽ chọn khi có nơi ở.</p>
+<div class="duration"><span>1.2 · ⏱ 60 phút</span></div></div></div>
+<div class="route ">
+<div class="time">13:00<small>– 14:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">📍</span></div>
+<div>
+<div class="route-title">
+<a href="#hoan-kiem">Hồ Hoàn Kiếm & Đền Ngọc Sơn <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Dạo bờ hồ, qua cầu Thê Húc. Đây là mốc trung tâm của hành trình.</p>
+<div class="duration"><span>1.3 · ⏱ 60 phút</span><span class="badge recommended">👍 Nên ghé</span></div></div></div>
+<div class="route ">
+<div class="time">14:00<small>– 15:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🏘</span></div>
+<div>
+<div class="route-title">
+<a href="#old-quarter">Phố cổ Hà Nội <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Đi bộ từ bờ bắc hồ qua Hàng Đào – Hàng Bạc – Mã Mây; nghỉ nước tùy sức.</p>
+<div class="duration"><span>1.4 · ⏱ 90 phút, gồm đi bộ</span></div></div></div>
+<div class="route ">
+<div class="time">16:00<small>– 16:40</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">⛪</span></div>
+<div>
+<div class="route-title">
+<a href="#cathedral">Nhà thờ Lớn <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Chừa 30 phút từ Phố cổ sang Nhà Thờ; dừng chụp ảnh, không nhất thiết vào bên trong.</p>
+<div class="duration"><span>1.5 · ⏱ 40 phút</span></div></div></div>
+<div class="route ">
+<div class="time">16:45<small>– 17:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">☕</span></div>
+<div>
+<div class="route-title">
+<a href="#egg-coffee">Café trứng, một khoảng nghỉ <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Chọn quanh Nhà Chung / Ấu Triệu để không đi vòng.</p>
+<div class="duration"><span>1.6 · ⏱ 45 phút</span></div></div></div></div>
+<div class="period">Tối</div>
+<div class="timeline">
+<div class="route ">
+<div class="time">18:30<small>– 19:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍜</span></div>
+<div>
+<div class="route-title">
+<a href="#food">Bún chả & bữa tối <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Chọn quán đã xác nhận bán tối, thuận đường trở về Phố cổ.</p>
+<div class="duration"><span>1.7 · ⏱ 60 phút</span></div></div></div>
+<div class="route ">
+<div class="time">19:30<small>– 20:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🌙</span></div>
+<div>
+<div class="route-title">
+<a href="#night-walk">Dạo Phố cổ → Tạ Hiện <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Đi bộ, cảm nhận phố đêm; chợ đêm / phố đi bộ chỉ khi đúng lịch hoạt động.</p>
+<div class="duration"><span>1.8 · ⏱ 75 phút</span></div></div></div>
+<div class="route ">
+<div class="time">20:45<small>– 21:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">☕</span></div>
+<div>
+<div class="route-title">
+<a href="#night-cafe">Café Hà Nội về đêm <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Một quán quanh Mã Mây – Hàng Bạc, hoặc Đinh Tiên Hoàng nếu đi về hồ. Có thể nghỉ sớm nếu mệt.</p>
+<div class="duration"><span>1.9 · ⏱ 45 phút</span><span class="badge optional">✨ Linh hoạt</span></div></div></div></div>
+<div class="day-end"><span>Những khoảng nghỉ cũng là một phần chuyến đi.</span>
+<a class="text-link" href="#d1">Điểm đến ngày 1 →</a></div>
+</article>
+<article class="day" id="day-2" data-day="2">
+<div class="dayhead"><span class="day-number">02</span>
+<div>
+<div class="eyebrow">Thứ Sáu · 02/10/2026</div>
+<h2>Di sản Hà Nội & Hồ Tây</h2>
+<p>Ngày 2 · lịch đã khớp ngày thực tế</p></div></div>
+<div class="info-bar"><span>🏛 Ba Đình: chỉ khu vực ngoài</span><span>🌿 Trấn Quốc lúc 15:00</span><span>☕ Café tối</span></div>
+<p class="day-intro">Bảo tàng Quân sự đóng cửa Thứ Sáu: chuyển sang sáng 04/10. Lăng đang tu bổ, không vào viếng. Ngày này dành cho cụm di sản trung tâm, có khoảng nghỉ trưa và phương án lễ hội linh hoạt.</p>
+<p class="day-intro">02/10 · Hà Nội: có nguồn dự báo dông; Hội Sách dự kiến khai mạc 20:00, là lựa chọn thay phần tối. <a class="text-link" href="#dated-info">Nguồn & chi tiết →</a></p>
+<div class="period">Sáng</div>
+<div class="timeline">
+<div class="route">
+<div class="time">07:30<small>– 08:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🏛</span></div>
+<div>
+<div class="route-title">
+<a href="#mausoleum">Ba Đình · bên ngoài Lăng ↗</a></div>
+<p class="route-description">Chỉ đến khu vực được phép tiếp cận; không có hoạt động vào viếng Lăng trong chuyến này.</p>
+<div class="duration"><span>2.1 · ⏱ 30 phút</span></div></div></div>
+<div class="route">
+<div class="time">08:10<small>– 08:40</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🪷</span></div>
+<div>
+<div class="route-title">
+<a href="#one-pillar">Chùa Một Cột ↗</a></div>
+<p class="route-description">Xác nhận lối vào cụm di tích trong đợt tu bổ. Chừa 20 phút đến Hoàng thành.</p>
+<div class="duration"><span>2.2 · ⏱ 30 phút</span></div></div></div>
+<div class="route">
+<div class="time">09:00<small>– 10:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🏯</span></div>
+<div>
+<div class="route-title">
+<a href="#citadel">Hoàng thành Thăng Long ↗</a></div>
+<p class="route-description">Có Lễ hội Văn hóa Thế giới 01–04/10. Kiểm tra cổng, vé và khu mở; tham quan di sản, không mặc định có show lúc 09:00.</p>
+<div class="duration"><span>2.3 · ⏱ 90 phút</span><span class="badge recommended">👍 Nên ghé</span></div></div></div>
+<div class="route">
+<div class="time">11:00<small>– 12:15</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">📜</span></div>
+<div>
+<div class="route-title">
+<a href="#literature">Văn Miếu – Quốc Tử Giám ↗</a></div>
+<p class="route-description">Dự trù 30 phút từ Hoàng thành; dành 75 phút tham quan thay vì chạy vội.</p>
+<div class="duration"><span>2.4 · ⏱ 75 phút</span><span class="badge recommended">👍 Nên ghé</span></div></div></div>
 </div>
-<p class="note"><b>Lưu ý quan trọng:</b> Bảo tàng Lịch sử Quân sự ở cơ sở mới Km 6+500 Đại lộ Thăng Long, khá xa trung tâm; lịch dưới đây dành riêng một block di chuyển. Bảo tàng thường đóng thứ Hai và thứ Sáu. Giờ mở cửa có thể thay đổi dịp lễ/bảo trì, nên kiểm tra lại trước chuyến đi.</p>
-
-<div class="day"><div class="dayhead"><div><h2>Ngày 1 • Hà Nội cổ & ẩm thực</h2><span>Nhẹ nhàng sau chuyến bay • chủ yếu đi bộ</span></div></div>
-<div class="route"><div class="time">Sáng</div><div class="code">1.1</div><div><b>TP.HCM → Hà Nội → khách sạn</b><small>Gửi hành lý / nhận phòng</small></div><div class="duration">~3–4 giờ</div></div>
-<div class="route"><div class="time">11:30</div><div class="code">1.2</div><div><b>Phở Hà Nội</b><small>Bữa trưa đầu tiên tại thủ đô</small></div><div class="duration">45–60 phút</div></div>
-<div class="route"><div class="time">13:00</div><div class="code">1.3</div><div><b>Hồ Hoàn Kiếm → Đền Ngọc Sơn</b><small>Điểm mở đầu, mốc trung tâm của hành trình</small></div><div class="duration">60 phút</div></div>
-<div class="route"><div class="time">14:15</div><div class="code">1.4</div><div><b>Phố cổ Hà Nội</b><small>Dạo Hàng Đào – Hàng Bạc – Mã Mây và các phố lân cận</small></div><div class="duration">90 phút</div></div>
-<div class="route"><div class="time">16:00</div><div class="code">1.5</div><div><b>Nhà thờ Lớn</b><small>Kiến trúc + khu café quanh Nhà Chung</small></div><div class="duration">30–45 phút</div></div>
-<div class="route"><div class="time">17:00</div><div class="code">1.6</div><div><b>Café trứng Hà Nội</b><small>Nghỉ chân trước buổi tối</small></div><div class="duration">45 phút</div></div>
-<div class="route"><div class="time">18:30</div><div class="code">1.7</div><div><b>Bún chả Hà Nội</b><small>Ăn tối</small></div><div class="duration">60 phút</div></div>
-<div class="route"><div class="time">20:00</div><div class="code">1.8</div><div><b>Tạ Hiện → phố đi bộ / chợ đêm</b><small>Có thể thêm một quán café Hà Nội buổi tối, ngồi ban công/rooftop nhìn phố</small></div><div class="duration">2–2.5 giờ</div></div>
+<div class="period">Trưa & chiều</div>
+<div class="timeline">
+<div class="route">
+<div class="time">12:15<small>– 13:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍚</span></div>
+<div>
+<div class="route-title">
+<a href="#day2-lunch">Ăn trưa & nghỉ ↗</a></div>
+<p class="route-description">Ăn quanh Văn Miếu rồi nghỉ ở quán; không quay về khách sạn nếu làm vòng đường.</p>
+<div class="duration"><span>2.5 · ⏱ 90 phút</span></div></div></div>
+<div class="route">
+<div class="time">13:45<small>– 14:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🌳</span></div>
+<div>
+<div class="route-title">
+<a href="#scenic">Đi qua Phan Đình Phùng ↗</a></div>
+<p class="route-description">Khung gồm xe đến phố và ghé ảnh 10–15 phút; có thể bỏ ghé khi mưa.</p>
+<div class="duration"><span>2.6 · ⏱ 45 phút, gồm di chuyển</span><span class="badge optional">✨ Linh hoạt</span></div></div></div>
+<div class="route">
+<div class="time">14:30<small>– 15:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#west-lake">Đến khu Trấn Quốc ↗</a></div>
+<p class="route-description">Dự trù 30 phút xe / đi bộ từ điểm xuống xe, tránh áp sát giờ đóng cửa.</p>
+<div class="duration"><span>2.7 · ⏱ 30 phút</span></div></div></div>
+<div class="route">
+<div class="time">15:00<small>– 15:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🪷</span></div>
+<div>
+<div class="route-title">
+<a href="#west-lake">Chùa Trấn Quốc ↗</a></div>
+<p class="route-description">Đến sớm hơn lịch cũ; vẫn xác nhận giờ chùa trước chuyến đi.</p>
+<div class="duration"><span>2.8 · ⏱ 45 phút</span></div></div></div>
+<div class="route">
+<div class="time">15:45<small>– 17:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🌿</span></div>
+<div>
+<div class="route-title">
+<a href="#west-lake">Hồ Tây & nghỉ bên hồ ↗</a></div>
+<p class="route-description">Dạo đoạn ngắn, nghỉ nước; nếu oi nóng / dông, vào quán. Không bắt buộc đứng ngoài chờ hoàng hôn.</p>
+<div class="duration"><span>2.9 · ⏱ 105 phút linh hoạt</span></div></div></div>
 </div>
-
-<div class="day"><div class="dayhead"><div><h2>Ngày 2 • Lịch sử, quân sự & Hồ Tây</h2><span>Ngày dày nhất • ưu tiên xuất phát sớm</span></div></div>
-<div class="route"><div class="time">07:15</div><div class="code">2.1</div><div><b>Lăng Bác → Quảng trường Ba Đình</b><small>Ưu tiên buổi sáng vì khung giờ viếng hạn chế</small></div><div class="duration">60–75 phút</div></div>
-<div class="route"><div class="time">08:30</div><div class="code">2.2</div><div><b>Chùa Một Cột</b><small>Ngay trong cụm Ba Đình</small></div><div class="duration">20–30 phút</div></div>
-<div class="route"><div class="time">09:15</div><div class="code">2.3</div><div><b>Văn Miếu – Quốc Tử Giám</b><small>Không gian lịch sử, kiến trúc và giáo dục</small></div><div class="duration">75–90 phút</div></div>
-<div class="route"><div class="time">11:00</div><div class="code">2.4</div><div><b>Di chuyển → Bảo tàng Lịch sử Quân sự</b><small>Cơ sở mới phía Tây Hà Nội</small></div><div class="duration">30–45 phút</div></div>
-<div class="route"><div class="time">11:45</div><div class="code">2.5</div><div><b>Ăn trưa / nghỉ</b><small>Nên ăn gần khu bảo tàng</small></div><div class="duration">60 phút</div></div>
-<div class="route"><div class="time">13:00</div><div class="code">2.6</div><div><b>Bảo tàng Lịch sử Quân sự Việt Nam 🇻🇳</b><small>Ưu tiên khu trưng bày chính + khí tài ngoài trời</small></div><div class="duration">2–2.5 giờ</div></div>
-<div class="route"><div class="time">15:30</div><div class="code">2.7</div><div><b>Hoàng thành Thăng Long</b><small>Nếu giao thông thuận lợi; xem trọng điểm thay vì toàn bộ</small></div><div class="duration">60–75 phút</div></div>
-<div class="route"><div class="time">16:45</div><div class="code">2.8</div><div><b>Phan Đình Phùng → Chùa Trấn Quốc → Hồ Tây</b><small>Chụp ảnh và kết thúc ngày bằng hoàng hôn</small></div><div class="duration">1.5–2 giờ</div></div>
-<div class="route"><div class="time">19:00</div><div class="code">2.9</div><div><b>Ăn tối + café Hà Nội / Hồ Tây</b><small>Buổi tối thư giãn, không thêm di tích</small></div><div class="duration">2 giờ</div></div>
+<div class="period">Tối</div>
+<div class="timeline">
+<div class="route">
+<div class="time">17:30<small>– 19:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">☕</span></div>
+<div>
+<div class="route-title">
+<a href="#west-cafe">Ăn tối → café Hồ Tây ↗</a></div>
+<p class="route-description">Giữ trải nghiệm café tối. Nếu chọn khai mạc Hội Sách lúc 20:00, rút café và dành 30–45 phút về Hoàn Kiếm.</p>
+<div class="duration"><span>2.10 · ⏱ 2 giờ</span><span class="badge recommended">👍 Nên ghé</span></div></div></div>
 </div>
-
-<div class="day"><div class="dayhead"><div><h2>Ngày 3 • Ninh Bình</h2><span>Thiên nhiên • thuyền • leo núi</span></div></div>
-<div class="route"><div class="time">06:30</div><div class="code">3.1</div><div><b>Hà Nội → Ninh Bình</b><small>Xuất phát sớm để tránh mất thời gian đẹp ở Tràng An</small></div><div class="duration">2–2.5 giờ</div></div>
-<div class="route"><div class="time">09:00</div><div class="code">3.2</div><div><b>Tràng An</b><small>Đi thuyền xuyên hang, núi đá vôi</small></div><div class="duration">2.5–3 giờ</div></div>
-<div class="route"><div class="time">12:15</div><div class="code">3.3</div><div><b>Đặc sản Ninh Bình</b><small>Dê núi, cơm cháy</small></div><div class="duration">60–75 phút</div></div>
-<div class="route"><div class="time">14:00</div><div class="code">3.4</div><div><b>Hang Múa</b><small>Leo núi, ngắm toàn cảnh Tam Cốc</small></div><div class="duration">2–2.5 giờ</div></div>
-<div class="route"><div class="time">16:30</div><div class="code">3.5</div><div><b>Ninh Bình → Hà Nội</b><small>Về khách sạn, ăn tối và nghỉ</small></div><div class="duration">2–2.5 giờ</div></div>
+<div class="day-end">
+<a class="text-link" href="#d2">Điểm đến ngày 2 →</a>
+<a class="text-link" href="#dated-info">Thời tiết & sự kiện →</a></div>
+</article>
+<article class="day" id="day-3" data-day="3">
+<div class="dayhead"><span class="day-number">03</span>
+<div>
+<div class="eyebrow">Thứ Bảy · 03/10/2026</div>
+<h2>Ninh Bình · giữa miền núi nước</h2>
+<p>Một chuyến thuyền, một tầm nhìn, đủ đầy một ngày.</p></div></div>
+<div class="info-bar"><span>🚗 Khoảng 4–5 giờ trên xe</span><span>🚤 Thuyền ~3 giờ</span><span>🥾 Đi bộ: vừa–cao</span><span>⏱ Đi lúc 06:30</span></div>
+<div class="weather-strip"><span>☀ Nắng: mũ & nghỉ bóng râm</span><span>💧 Mang đủ nước</span><span>🥾 Giày bám tốt</span><span>⏱ Leo chậm, nghỉ đều</span><span>🌧 Mưa lớn / sấm sét: không leo</span></div>
+<p class="day-intro">Ưu tiên xe đặt trước / xe riêng để chủ động giờ về. Các khung di chuyển là dự trù, chưa phải dữ liệu giao thông trực tiếp. Không thêm Bái Đính, Hoa Lư hay tour Tam Cốc.</p>
+<p class="day-intro">03/10 · Ninh Bình: có nguồn dự báo nắng 35°C; chuẩn bị nước, mũ và giảm leo nếu nóng. Diễu hành Hồ Gươm trùng lịch nên không ghép. <a class="text-link" href="#dated-info">Nguồn & chi tiết →</a></p>
+<div class="period">Sáng</div>
+<div class="timeline">
+<div class="route transfer">
+<div class="time">06:30<small>– 09:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#nb-transfer">Hà Nội → Tràng An <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Ăn sáng trước hoặc mang theo; 2–2,5 giờ đi xe tùy điểm đón, chừa thời gian vệ sinh.</p>
+<div class="duration"><span>3.1 · ⏱ 2 giờ 30 phút</span></div></div></div>
+<div class="route ">
+<div class="time">09:00<small>– 09:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🎟</span></div>
+<div>
+<div class="route-title">
+<a href="#trang-an">Mua vé, chọn tuyến & lên thuyền <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Kiểm tra thời lượng tuyến và hàng chờ; mặc áo phao theo hướng dẫn.</p>
+<div class="duration"><span>3.2 · ⏱ 30 phút dự phòng</span></div></div></div>
+<div class="route ">
+<div class="time">09:30<small>– 12:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚤</span></div>
+<div>
+<div class="route-title">
+<a href="#trang-an">Tràng An <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Trôi giữa núi đá vôi và những hang nước. Chọn tuyến khoảng 3 giờ phù hợp thời gian còn lại.</p>
+<div class="duration"><span>3.3 · ⏱ Khoảng 3 giờ</span><span class="badge must">⭐ Ưu tiên giữ</span></div></div></div></div>
+<div class="period">Trưa & chiều</div>
+<div class="timeline">
+<div class="route ">
+<div class="time">12:30<small>– 13:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍚</span></div>
+<div>
+<div class="route-title">
+<a href="#nb-food">Dê núi, cơm cháy & nghỉ trưa <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Chọn quán thuận đường; dành thời gian nghỉ sau ăn, không leo ngay.</p>
+<div class="duration"><span>3.4 · ⏱ 75 phút</span></div></div></div>
+<div class="route transfer">
+<div class="time">13:45<small>– 14:15</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#hang-mua">Tràng An → Hang Múa <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Khoảng 8–10 km theo ghi chú cũ, cần kiểm tra tuyến từ quán; gồm gửi xe và mua vé.</p>
+<div class="duration"><span>3.5 · ⏱ 30 phút dự trù</span></div></div></div>
+<div class="route ">
+<div class="time">14:15<small>– 16:15</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🥾</span></div>
+<div>
+<div class="route-title">
+<a href="#hang-mua">Hang Múa <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Leo chậm, nghỉ thường xuyên; dành 60–90 phút lên xuống tùy thể lực và phần còn lại để ngắm cảnh.</p>
+<div class="duration"><span>3.6 · ⏱ 2 giờ</span><span class="badge recommended">👍 Nên ghé</span></div></div></div>
+<div class="route ">
+<div class="time">16:15<small>– 16:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">💧</span></div>
+<div>
+<div class="route-title">
+<a href="#hang-mua">Nghỉ chân, uống nước <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Vệ sinh, tập trung lên xe. Nắng gắt có thể giảm phần leo, không dồn giờ về.</p>
+<div class="duration"><span>3.7 · ⏱ 15 phút</span></div></div></div></div>
+<div class="period">Tối</div>
+<div class="timeline">
+<div class="route transfer">
+<div class="time">16:30<small>– 19:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#nb-transfer">Ninh Bình → Hà Nội <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Dự trù 2–2,5 giờ; có thể muộn hơn nếu tắc đường.</p>
+<div class="duration"><span>3.8 · ⏱ 2 giờ 30 phút</span></div></div></div>
+<div class="route ">
+<div class="time">19:30<small>– 20:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍲</span></div>
+<div>
+<div class="route-title">
+<a href="#nb-food">Ăn tối & nghỉ <span aria-hidden="true">↗</span></a></div>
+<p class="route-description">Ăn gần khách sạn; không xếp thêm điểm tham quan sau ngày dài.</p>
+<div class="duration"><span>3.9 · ⏱ 60 phút</span></div></div></div></div>
+<div class="day-end"><span>Những khoảng nghỉ cũng là một phần chuyến đi.</span>
+<a class="text-link" href="#d3">Điểm đến ngày 3 →</a></div>
+</article>
+<article class="day" id="day-4" data-day="4">
+<div class="dayhead"><span class="day-number">04</span>
+<div>
+<div class="eyebrow">Chủ Nhật · 04/10/2026</div>
+<h2>Bảo tàng Quân sự & chiều thong thả</h2>
+<p>Ngày 4 · lịch đã khớp ngày thực tế</p></div></div>
+<div class="info-bar"><span>⭐ Bảo tàng: 08:15–10:30</span><span>🧳 Trả phòng trước 12:00</span><span>✈ Về tối · giờ bay còn cần chốt</span></div>
+<p class="day-intro">Dời bảo tàng sang Chủ Nhật để giữ điểm ưu tiên, không đổi Ninh Bình ngày 03/10. Đây là ngoại lệ cho ngày cuối: chỉ một điểm xa buổi sáng, sau đó về trung tâm. Rút phần mua quà / café theo giờ bay; chuẩn bị hành lý từ tối trước.</p>
+<p class="day-intro">04/10 · Hà Nội: dự báo mưa chưa thống nhất; ưu tiên bảo tàng trong nhà và khoảng dự phòng sân bay. <a class="text-link" href="#dated-info">Nguồn & chi tiết →</a></p>
+<div class="period">Sáng</div>
+<div class="timeline">
+<div class="route">
+<div class="time">06:30<small>– 07:00</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍜</span></div>
+<div>
+<div class="route-title">
+<a href="#breakfast">Ăn sáng & sẵn sàng hành lý ↗</a></div>
+<p class="route-description">Ăn gần nơi ở; đóng gói trước khi đi. Hỏi khách sạn giờ trả phòng, có thể trả phòng sớm và gửi đồ nếu cần.</p>
+<div class="duration"><span>4.1 · ⏱ 30 phút</span></div></div></div>
+<div class="route">
+<div class="time">07:00<small>– 08:15</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#military">Hoàn Kiếm → Bảo tàng Quân sự ↗</a></div>
+<p class="route-description">Dự trù 60–75 phút đi xe và vào cổng. Đến đúng cơ sở Km 6+500 Đại lộ Thăng Long.</p>
+<div class="duration"><span>4.2 · ⏱ 75 phút dự phòng</span></div></div></div>
+<div class="route">
+<div class="time">08:15<small>– 10:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">⭐</span></div>
+<div>
+<div class="route-title">
+<a href="#military">Bảo tàng Lịch sử Quân sự Việt Nam ↗</a></div>
+<p class="route-description">Chủ Nhật thuộc lịch mở cửa chính thức. Ưu tiên khu trong nhà; giờ vào có thể chịu ảnh hưởng hàng chờ cuối tuần.</p>
+<div class="duration"><span>4.3 · ⏱ 2 giờ 15 phút</span><span class="badge must">⭐ Ưu tiên giữ</span></div></div></div>
+<div class="route">
+<div class="time">10:30<small>– 11:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🚗</span></div>
+<div>
+<div class="route-title">
+<a href="#airport">Về khách sạn & trả phòng ↗</a></div>
+<p class="route-description">Dự trù 60–75 phút về trung tâm. Nếu khách sạn không cho trả trễ, nên trả phòng và gửi đồ từ sáng.</p>
+<div class="duration"><span>4.4 · ⏱ 75 phút</span></div></div></div>
 </div>
-
-<div class="day"><div class="dayhead"><div><h2>Ngày 4 • Hà Nội chậm & mua quà</h2><span>Giữ buffer cho sân bay</span></div></div>
-<div class="route"><div class="time">07:00</div><div class="code">4.1</div><div><b>Ăn sáng</b><small>Bánh cuốn / xôi / món chưa thử</small></div><div class="duration">45–60 phút</div></div>
-<div class="route"><div class="time">08:00</div><div class="code">4.2</div><div><b>Dạo Hồ Gươm lần cuối</b><small>Không khí buổi sáng, chụp ảnh</small></div><div class="duration">60 phút</div></div>
-<div class="route"><div class="time">09:00</div><div class="code">4.3</div><div><b>Mua đặc sản</b><small>Cốm, bánh cốm, ô mai, trà, cà phê</small></div><div class="duration">60–90 phút</div></div>
-<div class="route"><div class="time">10:30</div><div class="code">4.4</div><div><b>Café + checkout</b><small>Khoảng nghỉ trước chuyến bay</small></div><div class="duration">60 phút</div></div>
-<div class="route"><div class="time">11:30</div><div class="code">4.5</div><div><b>Ăn trưa → Nội Bài → TP.HCM</b><small>Nên rời trung tâm đủ sớm theo giờ bay</small></div><div class="duration">Theo chuyến bay</div></div>
+<div class="period">Trưa & chiều</div>
+<div class="timeline">
+<div class="route">
+<div class="time">11:45<small>– 12:45</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🍚</span></div>
+<div>
+<div class="route-title">
+<a href="#airport">Ăn trưa, nghỉ gần khách sạn ↗</a></div>
+<p class="route-description">Lấy lại nhịp thong thả sau bảo tàng; hành lý gửi tại khách sạn khi được đồng ý.</p>
+<div class="duration"><span>4.5 · ⏱ 60 phút</span></div></div></div>
+<div class="route">
+<div class="time">12:45<small>– 13:30</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">🎁</span></div>
+<div>
+<div class="route-title">
+<a href="#gifts">Mua quà / ghé Hội Sách ↗</a></div>
+<p class="route-description">Chọn một việc: mua đặc sản hoặc Hội Sách khu Hồ Gươm nếu hoạt động đúng kế hoạch. Rút mục này nếu phải ra sân bay sớm.</p>
+<div class="duration"><span>4.6 · ⏱ 45 phút</span><span class="badge optional">✨ Linh hoạt</span></div></div></div>
+<div class="route">
+<div class="time">13:30<small>– 14:15</small></div>
+<div class="marker"><span class="dot" aria-hidden="true">☕</span></div>
+<div>
+<div class="route-title">
+<a href="#last-cafe">Café cuối chuyến & Hồ Gươm ↗</a></div>
+<p class="route-description">Chọn một quán gần nơi giữ hành lý; dạo hồ ngắn nếu còn giờ. Không cố ghép cả hai.</p>
+<div class="duration"><span>4.7 · ⏱ 45 phút</span><span class="badge optional">✨ Linh hoạt</span></div></div></div>
 </div>
+<div class="period">Theo giờ bay</div>
+<div class="timeline">
+<div class="route">
+<div class="time">T − 4h</div>
+<div class="marker"><span class="dot" aria-hidden="true">✈</span></div>
+<div>
+<div class="route-title">
+<a href="#airport">Lấy hành lý → Nội Bài → TP.HCM ↗</a></div>
+<p class="route-description">T là giờ cất cánh tối 04/10, chưa có giờ cụ thể. Ví dụ bay 20:00: rời khách sạn khoảng 16:00; đây chỉ là ví dụ, không phải vé đã đặt.</p>
+<div class="duration"><span>4.8 · ⏱ Giữ khoảng dự phòng</span><span class="badge must">⭐ Ưu tiên giữ</span></div></div></div>
+</div>
+<div class="day-end">
+<a class="text-link" href="#d4">Điểm đến ngày 4 →</a>
+<a class="text-link" href="#dated-info">Thời tiết & sự kiện →</a></div>
+</article></div>
+<aside class="plan-aside">
+<div class="eyebrow">BỐN NGÀY CỦA BẠN</div>
+<a href="#day-1">01 · Hà Nội cổ</a>
+<a href="#day-2">02 · Di sản & Hồ Tây</a>
+<a href="#day-3">03 · Ninh Bình</a>
+<a href="#day-4">04 · Bảo tàng & về tối</a>
+<p>Đã chốt 01–04/10/2026. Còn cần giờ bay và khách sạn để chốt giờ đón / trả.</p>
+<a href="#tips">Lưu ý trước chuyến đi ↗</a>
+</aside></div>
 </section>
 
 <section id="d1" class="panel">
-<h2>Ngày 1 • Hà Nội cổ</h2>
+<a class="back-link" href="#day-1">← Về lịch ngày 1</a>
+<h2>Thứ Năm · 01/10/2026 · Hà Nội cổ</h2>
+<div class="info-bar"><span>🚶 Đi bộ theo cụm</span><span>☕ Café & ẩm thực</span><span>📍 Hoàn Kiếm</span></div>
 <div class="cards">
-<div class="card"><h3>1.3 Hồ Hoàn Kiếm & Đền Ngọc Sơn</h3><div class="meta"><span class="pill">0 km từ mốc trung tâm</span><span class="pill">~60 phút</span><br>Đền Ngọc Sơn: Đinh Tiên Hoàng, Hoàn Kiếm, Hà Nội.</div><p>Biểu tượng trung tâm Hà Nội. Đi qua cầu Thê Húc, tham quan Đền Ngọc Sơn rồi đi bộ quanh hồ. Giờ công bố của khu đền: 07:00–19:00 từ Thứ 2–5; 07:00–22:00 Thứ 6–CN và lễ/Tết.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">Google Maps</a><a class="btn alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ngoc+Son+Temple+Hanoi">Đền Ngọc Sơn</a></div></div>
-<div class="card"><h3>1.4 Phố cổ Hà Nội</h3><div class="meta"><span class="pill">~0.5 km</span><span class="pill">90 phút + buổi tối</span></div><p>Không phải một điểm đơn lẻ mà là khu phố để đi bộ, quan sát kiến trúc, hàng quán và nhịp sống. Nên quay lại buổi tối để trải nghiệm không khí khác hẳn ban ngày.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter">Google Maps</a></div></div>
-<div class="card"><h3>1.5 Nhà thờ Lớn Hà Nội</h3><div class="meta"><span class="pill">~0.5 km</span><span class="pill">30–45 phút</span><br>1 phố Nhà Thờ, Hoàn Kiếm.</div><p>Điểm kiến trúc nổi bật ở khu trung tâm. Nên dành thời gian cho quảng trường nhỏ phía trước và các phố café lân cận; lưu ý giờ vào bên trong có thể phụ thuộc thánh lễ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=St+Joseph+Cathedral+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>1.6 Café trứng</h3><div class="meta"><span class="pill">Khu Hoàn Kiếm</span><span class="pill">~45 phút</span></div><p>Đây là “khoảng nghỉ trải nghiệm” của ngày đầu. Chọn quán thuận tuyến Phố cổ – Nhà thờ Lớn thay vì chạy xa chỉ vì một quán cụ thể.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=egg+coffee+Hoan+Kiem+Hanoi">Tìm café trứng</a></div></div>
-<div class="card"><h3>1.8 Tạ Hiện & phố đêm</h3><div class="meta"><span class="pill">~0.8 km</span><span class="pill">2–2.5 giờ</span></div><p>Phù hợp sau 20:00. Có thể kết hợp Tạ Hiện, Mã Mây, Hàng Buồm và quay lại Hồ Gươm. Nếu đúng cuối tuần, ưu tiên khu phố đi bộ/chợ đêm.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ta+Hien+Street+Hanoi">Google Maps</a></div></div>
-</div></section>
+<article class="card" id="hoan-kiem" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">📍</span><span class="badge recommended">👍 Nên ghé</span></div>
+<h3>Hồ Hoàn Kiếm & Đền Ngọc Sơn</h3>
+<div class="meta"><span class="pill">⏱ 60 phút</span><span class="pill">Mục 1.3</span></div>
+<p>Đi qua cầu Thê Húc, chạm vào nét Hà Nội bên mặt hồ. Dạo bờ hồ và tham quan đền là hai trải nghiệm khác nhau; đền có vé và giờ đón khách riêng.</p>
+<div class="facts"><span>📏 0 km · mốc trung tâm</span><span>🕐 Nên đến: Đầu chiều; sáng sớm nếu muốn mát</span><span>📍 Đinh Tiên Hoàng · lối cầu Thê Húc</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giờ đền trong bản cũ: 07:00–19:00 (Thứ 2–5), đến 22:00 (Thứ 6–CN); chưa xác minh lại, cần kiểm tra theo ngày đi.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">📍 Mở Google Maps</a>
+<a class="btn alt" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Ngoc+Son+Temple+Hanoi">📍 Mở Google Maps · Đền Ngọc Sơn</a></div>
+</article>
+<article class="card" id="old-quarter" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🏘</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Phố cổ Hà Nội</h3>
+<div class="meta"><span class="pill">⏱ 90 phút</span><span class="pill">Mục 1.4</span></div>
+<p>Những mặt tiền nhỏ, nếp nhà cũ và hàng quán nối nhau. Đi một cụm phố, dừng khi thấy thích; không cần phủ hết khu Phố cổ.</p>
+<div class="facts"><span>📏 ~0,5–1,5 km từ Hồ Gươm, tùy phố</span><span>🕐 Nên đến: Chiều & tối</span><span>📍 Hàng Đào – Hàng Bạc – Mã Mây</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Chọn giày dễ đi; chợ đêm / phố đi bộ phụ thuộc lịch hoạt động.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="cathedral" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">⛪</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Nhà thờ Lớn</h3>
+<div class="meta"><span class="pill">⏱ 40 phút</span><span class="pill">Mục 1.5</span></div>
+<p>Mặt tiền cổ kính và những con phố café quanh Nhà Chung. Khoảng sân trước nhà thờ là nơi dừng chân nhẹ nhàng sau Phố cổ.</p>
+<div class="facts"><span>📏 ~0,5–1 km từ Hồ Gươm</span><span>🕐 Nên đến: Khoảng 16:00</span><span>📍 1 phố Nhà Thờ · Hà Nội</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giờ vào trong phụ thuộc thánh lễ; trang phục lịch sự, giữ yên tĩnh.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=St+Joseph+Cathedral+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="egg-coffee" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">☕</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Café trứng</h3>
+<div class="meta"><span class="pill">⏱ 45 phút</span><span class="pill">Mục 1.6</span></div>
+<p>Một tách café trứng và khoảng nghỉ đủ dài cho đôi chân. Chọn quán thuận tuyến, không cần chạy xa chỉ vì một địa chỉ nổi tiếng.</p>
+<div class="facts"><span>📏 Khu Nhà Chung / Ấu Triệu; tùy quán</span><span>🕐 Nên đến: 16:45, sau Nhà thờ Lớn</span><span>📍 Chưa chốt quán; ưu tiên gần Nhà thờ</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Maps là tìm kiếm khu vực; kiểm tra địa chỉ và giờ quán trước khi đến.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=egg+coffee+Hoan+Kiem+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="night-walk" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🌙</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Tạ Hiện & phố đêm</h3>
+<div class="meta"><span class="pill">⏱ 75 phút</span><span class="pill">Mục 1.8</span></div>
+<p>Khi đèn lên, cùng những con phố ấy lại mang một nhịp sống khác. Dạo Phố cổ rồi ghé Tạ Hiện trước tách café cuối ngày.</p>
+<div class="facts"><span>📏 ~0,8–1,2 km từ Hồ Gươm</span><span>🕐 Nên đến: Sau bữa tối</span><span>📍 Tạ Hiện – Mã Mây – Hàng Buồm</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Cuối tuần chỉ ghép phố đi bộ / chợ đêm nếu đúng lịch; có thể về nghỉ sớm.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Ta+Hien+Street+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="arrival" tabindex="-1"><span class="card-icon" aria-hidden="true">✈</span>
+<h3>Hạ cánh & gửi hành lý</h3>
+<p>Giờ bay đi chưa chốt. Từ Nội Bài dành khoảng 60–90 phút đến khu Hoàn Kiếm, ngoài thời gian lấy hành lý. Xác nhận giờ nhận phòng; nếu hạ cánh muộn, rút Phố cổ hoặc café chiều, không ép chạy đủ lịch.</p>
+</article>
+<article class="card" id="food" tabindex="-1"><span class="card-icon" aria-hidden="true">🍜</span>
+<h3>Phở & bún chả Hà Nội</h3>
+<p>Phở buổi trưa: 60 phút gần khách sạn. Bún chả buổi tối: 18:30–19:30, chọn quán xác nhận có bán tối. Chưa chốt quán, địa chỉ và khoảng cách; tìm theo nơi ở để tránh đi vòng.</p>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=pho+bun+cha+Hoan+Kiem+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="night-cafe" tabindex="-1"><span class="card-icon" aria-hidden="true">☕</span>
+<h3>Một tách café giữa phố đêm</h3>
+<p>20:45–21:30 · 45 phút, linh hoạt theo sức. Hai khu thuận tuyến: Mã Mây – Hàng Bạc sau Tạ Hiện, hoặc Đinh Tiên Hoàng nếu quay về hồ. Chưa chốt quán / địa chỉ / khoảng cách; kiểm tra giờ phục vụ tối.</p>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=cafe+Ma+May+Hang+Bac+Hanoi">📍 Mở Google Maps</a></div>
+</article></div>
+</section>
 
 <section id="d2" class="panel">
-<h2>Ngày 2 • Lịch sử, quân sự & Hồ Tây</h2>
-<p class="note">Bảo tàng Lịch sử Quân sự thường mở Thứ 3, 4, 5, 7, CN và đóng Thứ 2, Thứ 6. Nếu Ngày 2 rơi vào ngày đóng cửa, nên đổi Ngày 1 ↔ Ngày 2 hoặc đổi thứ tự ngày trong chuyến đi.</p>
+<a class="back-link" href="#day-2">← Về lịch ngày 2</a>
+<h2>Thứ Sáu · 02/10/2026 · Di sản & Hồ Tây</h2>
+<div class="info-bar"><span>🏛 Di sản trung tâm</span><span>🌿 Trấn Quốc 15:00</span><span>☕ Café tối</span></div>
+
+<div class="notice">Ngày 02/10 là Thứ Sáu: bảo tàng nghỉ, đã dời sang 04/10. Lăng không đón khách viếng suốt chuyến đi vì tu bổ. Hoàng thành có lễ hội, cần kiểm tra lối vào / chương trình trong ngày.</div>
 <div class="cards">
-<div class="card"><h3>2.1 Lăng Chủ tịch Hồ Chí Minh</h3><div class="meta"><span class="pill">~2.5 km từ Hồ Gươm</span><span class="pill">60–75 phút</span><br>1 Hùng Vương, Ba Đình.</div><p>Điểm cần ưu tiên sớm nhất vì giờ viếng buổi sáng hạn chế. Thông tin địa điểm phổ biến: khoảng 07:30–10:30 vào các ngày mở cửa. Có kiểm tra an ninh và quy định trang phục.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>2.2 Chùa Một Cột</h3><div class="meta"><span class="pill">Đi bộ từ Lăng</span><span class="pill">20–30 phút</span></div><p>Biểu tượng kiến trúc nhỏ nhưng nổi tiếng, phù hợp ghép trực tiếp sau Lăng và Quảng trường Ba Đình.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=One+Pillar+Pagoda+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>2.3 Văn Miếu – Quốc Tử Giám</h3><div class="meta"><span class="pill">~2 km từ Hồ Gươm</span><span class="pill">75–90 phút</span><br>58 Quốc Tử Giám, Hà Nội.</div><p>Quần thể gắn với truyền thống giáo dục và khoa bảng Việt Nam. Nên đi trước giữa trưa để dễ chụp ảnh và đỡ mệt.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>2.6 Bảo tàng Lịch sử Quân sự Việt Nam 🇻🇳</h3><div class="meta"><span class="pill">~12 km từ Hồ Gươm</span><span class="pill">2–2.5 giờ</span><br>Km 6+500, Đại lộ Thăng Long, Xuân Phương, Hà Nội.</div><p>Cơ sở mới quy mô lớn, có trưng bày trong nhà và khí tài ngoài trời. Lịch tham khảo hiện hành: 08:00–16:30 vào Thứ 3, 4, 5, 7, CN; đóng Thứ 2 và Thứ 6. Đây là điểm cần dành thời gian thực sự, không nên chỉ ghé 1 giờ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+Km6%2B500+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>2.7 Hoàng thành Thăng Long</h3><div class="meta"><span class="pill">~2 km từ Hồ Gươm</span><span class="pill">60–75 phút bản rút gọn</span><br>19C Hoàng Diệu, Ba Đình.</div><p>Di sản thế giới UNESCO. Giờ tham khảo: 08:00–17:00. Vì Ngày 2 đã có bảo tàng quân sự, lịch này ưu tiên các khu chính; nếu muốn xem kỹ nên dành 1.5–2 giờ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long">Google Maps</a></div></div>
-<div class="card"><h3>2.8 Phan Đình Phùng</h3><div class="meta"><span class="pill">~2.5 km</span><span class="pill">20–30 phút</span></div><p>Tuyến phố cây xanh và kiến trúc đẹp, phù hợp làm chặng chuyển tiếp từ khu Ba Đình sang Hồ Tây thay vì xem như một điểm tham quan dài.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Phan+Dinh+Phung+Street+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>2.8 Chùa Trấn Quốc & Hồ Tây</h3><div class="meta"><span class="pill">~3.5 km</span><span class="pill">1.5–2 giờ cả cụm</span><br>46 Thanh Niên, Tây Hồ.</div><p>Chùa Trấn Quốc thường có hai khung 07:30–11:00 và 13:30–17:00. Vì vậy nên vào chùa trước 17:00, sau đó dành hoàng hôn cho Hồ Tây.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tran+Quoc+Pagoda+Hanoi">Chùa Trấn Quốc</a><a class="btn alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi">Hồ Tây</a></div></div>
-<div class="card"><h3>2.9 Café Hà Nội buổi tối</h3><div class="meta"><span class="pill">Hồ Tây hoặc Hoàn Kiếm</span><span class="pill">60–90 phút</span></div><p>Sau ngày tham quan dày, nên chọn café có không gian ngồi lâu thay vì thêm điểm check-in. Nếu còn sức có thể về khu phố cổ; nếu không, ở Hồ Tây sẽ tối ưu di chuyển hơn.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=cafe+West+Lake+Hanoi">Café Hồ Tây</a></div></div>
-</div></section>
+<article class="card" id="mausoleum" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🏛</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Lăng Chủ tịch Hồ Chí Minh</h3>
+<div class="meta"><span class="pill">⏱ 30 phút bên ngoài</span><span class="pill">Mục 2.1</span></div>
+<p>Một khoảng lặng trong hành trình lịch sử. Lăng đang tu bổ suốt 01–04/10. Chỉ xem bên ngoài ở khu vực được phép; không xếp hàng viếng.</p>
+<div class="facts"><span>📏 ~2,5–4 km từ Hồ Gươm; tùy lối vào</span><span>🕐 Nên đến: 07:30 ngày 02/10; không vào viếng</span><span>📍 Khu Ba Đình · xác nhận lối đón khách trước khi đi</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Tu bổ 04/09–02/11/2026; đón khách viếng lại 03/11/2026. <a href="#tips">Nguồn chính thức · kiểm tra 23/09/2026</a>. Chuyến đi nằm trong đợt này: chỉ tham quan khu vực ngoài được phép; không vào viếng.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="one-pillar" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🪷</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Chùa Một Cột</h3>
+<div class="meta"><span class="pill">⏱ 30 phút</span><span class="pill">Mục 2.2</span></div>
+<p>Kiến trúc nhỏ, giàu dấu ấn, ghép thuận tuyến sau Lăng và Quảng trường. Dừng ngắm và chụp ảnh vừa đủ.</p>
+<div class="facts"><span>📏 Cùng cụm Ba Đình; ~3 km từ Hồ Gươm</span><span>🕐 Nên đến: 08:10 ngày 02/10, sau khu Ba Đình</span><span>📍 Phố Chùa Một Cột · Ba Đình</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Kiểm tra giờ tiếp cận thực tế; tôn trọng không gian thờ tự.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=One+Pillar+Pagoda+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="citadel" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🏯</span><span class="badge recommended">👍 Nên ghé</span></div>
+<h3>Hoàng thành Thăng Long</h3>
+<div class="meta"><span class="pill">⏱ 90 phút</span><span class="pill">Mục 2.3</span></div>
+<p>Lớp trầm tích của kinh thành xưa và di sản UNESCO. Ghé ngày 02/10, trong thời gian Lễ hội Văn hóa Thế giới diễn ra; giờ hoạt động lễ hội khác giờ tham quan di sản.</p>
+<div class="facts"><span>📏 ~2–3 km từ Hồ Gươm</span><span>🕐 Nên đến: 09:00 ngày 02/10</span><span>📍 19C Hoàng Diệu · Hà Nội</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Nguồn chính thức: 08:00–17:00 hằng ngày. <a href="https://hoangthanhthanglong.vn/" target="_blank" rel="noopener noreferrer">Kiểm tra 23/09/2026 ↗</a>. Kiểm tra cổng vào, khu vực mở và vé trong dịp lễ hội. Không mặc định có biểu diễn lúc tham quan.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="literature" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">📜</span><span class="badge recommended">👍 Nên ghé</span></div>
+<h3>Văn Miếu – Quốc Tử Giám</h3>
+<div class="meta"><span class="pill">⏱ 75 phút</span><span class="pill">Mục 2.4</span></div>
+<p>Những sân vườn, bia tiến sĩ và dấu ấn học hành qua nhiều thế kỷ. Giữ nhịp tham quan nhẹ, chọn các khu chính.</p>
+<div class="facts"><span>📏 ~2–3 km từ Hồ Gươm</span><span>🕐 Nên đến: 11:00 ngày 02/10; nghỉ nước khi nóng</span><span>📍 58 Quốc Tử Giám · Hà Nội</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giờ 08:00–17:00 trong ghi chú bàn giao chưa xác minh lại; kiểm tra vé, lịch mở cửa theo ngày.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="day2-lunch" tabindex="-1"><span class="card-icon" aria-hidden="true">🍚</span>
+<h3>Bữa trưa trước chặng xa</h3>
+<p>12:15–13:45 · 90 phút gần Văn Miếu. Chưa chọn quán; tránh xếp hàng dài. Không có chặng đi bảo tàng hôm nay; nghỉ trưa trước khi sang Phan Đình Phùng và Hồ Tây.</p>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=restaurant+Van+Mieu+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+
+<article class="card" id="scenic" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🌳</span><span class="badge optional">✨ Linh hoạt</span></div>
+<h3>Phan Đình Phùng</h3>
+<div class="meta"><span class="pill">⏱ 10–15 phút ghé ảnh</span><span class="pill">Mục 2.6</span></div>
+<p>Một con đường có bóng cây và kiến trúc đẹp. Chỉ ghé khi tuyến xe thực tế thuận đường; không bắt xe vòng lại chỉ để chụp ảnh.</p>
+<div class="facts"><span>📏 ~2,5–3,5 km từ Hồ Gươm</span><span>🕐 Nên đến: 13:45–14:30, gồm chặng xe; bỏ ghé khi mưa</span><span>📍 Phố Phan Đình Phùng · Hà Nội</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Khung mới trước Trấn Quốc lúc 15:00; không cần đi vòng từ bảo tàng về vì bảo tàng đã chuyển ngày.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Phan+Dinh+Phung+Street+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="west-lake" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🪷</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Chùa Trấn Quốc & Hồ Tây</h3>
+<div class="meta"><span class="pill">⏱ 45 phút chùa + nghỉ hồ linh hoạt</span><span class="pill">Mục 2.7 · 2.8 · 2.9</span></div>
+<p>Từ không gian tĩnh tại của chùa sang khoảng thoáng của mặt hồ. Đi bộ đoạn Thanh Niên, không cần vòng cả Hồ Tây.</p>
+<div class="facts"><span>📏 ~3,5–5 km từ Hồ Gươm; tùy mốc</span><span>🕐 Nên đến: Trấn Quốc 15:00 ngày 02/10; hồ từ 15:45</span><span>📍 46 Thanh Niên · lối chùa Trấn Quốc</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giờ chùa tham khảo cũ: 07:30–11:00, 13:30–17:00, cần xác minh. Nếu đến muộn / đóng cửa, chỉ dạo bên hồ; hoàng hôn tùy ngày.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Tran+Quoc+Pagoda+Hanoi">📍 Mở Google Maps · Chùa Trấn Quốc</a>
+<a class="btn alt" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi">📍 Mở Google Maps · Hồ Tây</a></div>
+</article>
+<article class="card" id="west-cafe" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">☕</span><span class="badge recommended">👍 Nên ghé</span></div>
+<h3>Café Hà Nội buổi tối</h3>
+<div class="meta"><span class="pill">⏱ 60–90 phút café, trong khung ăn tối 2 giờ</span><span class="pill">Mục 2.10</span></div>
+<p>Kết thúc một ngày nhiều lịch sử bằng chỗ ngồi dễ chịu và tầm nhìn thoáng. Giữ café ở cùng khu để giảm di chuyển.</p>
+<div class="facts"><span>📏 Khu Hồ Tây; khoảng cách tùy quán</span><span>🕐 Nên đến: Sau ăn tối</span><span>📍 Chưa chọn quán; gần Thanh Niên / Trúc Bạch</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Kiểm tra giờ quán và quãng đường trên Maps. Có thể chọn Hoàn Kiếm nếu tiện đường về khách sạn.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=cafe+West+Lake+Hanoi">📍 Mở Google Maps</a></div>
+</article></div>
+</section>
 
 <section id="d3" class="panel">
-<h2>Ngày 3 • Ninh Bình</h2>
+<a class="back-link" href="#day-3">← Về lịch ngày 3</a>
+<h2>Thứ Bảy · 03/10/2026 · Ninh Bình</h2>
+<div class="info-bar"><span>🚗 Khoảng 4–5 giờ trên xe</span><span>🚤 Thuyền ~3 giờ</span><span>🥾 Đi bộ: vừa–cao</span><span>⏱ Đi lúc 06:30</span></div>
 <div class="cards">
-<div class="card"><h3>3.2 Tràng An</h3><div class="meta"><span class="pill">~95 km từ Hồ Gươm</span><span class="pill">2.5–3 giờ</span><br>Tràng An, Hoa Lư, Ninh Bình.</div><p>Trải nghiệm thuyền xuyên qua hệ thống núi đá vôi, hang và cảnh quan di sản. Khu du lịch thường hoạt động khoảng 07:00–17:00; đến buổi sáng giúp tránh nắng gắt và giữ đủ thời gian cho Hang Múa.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Trang+An+Ninh+Binh">Google Maps</a></div></div>
-<div class="card"><h3>3.4 Hang Múa</h3><div class="meta"><span class="pill">~8–10 km từ Tràng An</span><span class="pill">2–2.5 giờ</span><br>Nam Hoa Lư, Ninh Bình.</div><p>Điểm nổi bật là cung đường leo bậc đá lên đỉnh ngắm Tam Cốc. Chuẩn bị giày bám tốt, nước uống và tránh leo quá gấp ngay sau bữa trưa. Trời quang sẽ quyết định rất nhiều đến trải nghiệm.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hang+Mua+Ninh+Binh">Google Maps</a></div></div>
-</div></section>
+<article class="card" id="trang-an" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🚤</span><span class="badge must">⭐ Ưu tiên giữ</span></div>
+<h3>Tràng An</h3>
+<div class="meta"><span class="pill">⏱ ~3 giờ thuyền + 30 phút chờ</span><span class="pill">Mục 3.2 · 3.3</span></div>
+<p>Cảnh núi đá vôi mở ra sau từng khúc nước và hang tối. Chọn tuyến phù hợp khung giờ, tận hưởng thay vì cố ghép nhiều điểm.</p>
+<div class="facts"><span>📏 Từ Hà Nội: dự trù 2–2,5 giờ xe; km theo điểm đón</span><span>🕐 Nên đến: Có mặt 09:00</span><span>📍 Bến thuyền Khu du lịch Tràng An · Ninh Bình</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giờ 07:00–17:00 trong bản cũ chưa xác minh. Kiểm tra tuyến, giá vé, thời lượng và điều kiện vận hành; mặc áo phao.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Trang+An+Ninh+Binh">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="hang-mua" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🥾</span><span class="badge recommended">👍 Nên ghé</span></div>
+<h3>Hang Múa</h3>
+<div class="meta"><span class="pill">⏱ 2 giờ; leo lên xuống ~60–90 phút tùy sức</span><span class="pill">Mục 3.5 · 3.6 · 3.7</span></div>
+<p>Những bậc đá dẫn lên góc nhìn rộng về vùng Tam Cốc. Không cần lên đỉnh bằng mọi giá; cảnh quan dưới chân núi cũng đáng dừng.</p>
+<div class="facts"><span>📏 ~8–10 km từ Tràng An, cần kiểm tra</span><span>🕐 Nên đến: 14:15 nếu trời dịu; giảm leo khi nắng gắt</span><span>📍 Khu du lịch Hang Múa · Ninh Bình</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giày bám tốt, nước, mũ; nghỉ đều. Mưa lớn, sấm sét hoặc bậc trơn: không leo. Kiểm tra giờ vào và xuống trước khi thiếu sáng.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Hang+Mua+Ninh+Binh">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="nb-transfer" tabindex="-1"><span class="card-icon" aria-hidden="true">🚗</span>
+<h3>Chặng đi & về Ninh Bình</h3>
+<p>06:30–09:00 đi, 16:30–19:00 về; mỗi chiều dự trù 2–2,5 giờ. Thống nhất trước điểm đón, chỗ trả và giờ chờ với nhà xe. Chưa chốt phương tiện; nếu đi xe tuyến cố định, cần tính thêm chặng đến bến thuyền và Hang Múa.</p>
+</article>
+<article class="card" id="nb-food" tabindex="-1"><span class="card-icon" aria-hidden="true">🍚</span>
+<h3>Đặc sản & khoảng nghỉ</h3>
+<p>12:30–13:45 · 75 phút: dê núi, cơm cháy hoặc món phù hợp khẩu vị. Chọn quán giữa Tràng An và Hang Múa; chưa có địa chỉ cụ thể. Buổi tối về Hà Nội ăn nhẹ gần khách sạn lúc 19:30, có thể muộn hơn theo giao thông.</p>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=restaurant+Trang+An+Ninh+Binh">📍 Mở Google Maps</a></div>
+</article></div>
+<div class="weather-strip"><span>☀ Nắng: mũ & nghỉ bóng râm</span><span>💧 Mang đủ nước</span><span>🥾 Giày bám tốt</span><span>⏱ Leo chậm, nghỉ đều</span><span>🌧 Mưa lớn / sấm sét: không leo</span></div>
+<div class="notice">Mưa nhẹ: hỏi đơn vị vận hành trước khi lên thuyền. Mưa lớn / cảnh báo nguy hiểm: không mặc định Tràng An vẫn an toàn; chỉ đi khi được phép, giảm hoặc bỏ phần leo Hang Múa.</div>
+</section>
 
 <section id="d4" class="panel">
-<h2>Ngày 4 • Chậm lại trước khi về</h2>
+<a class="back-link" href="#day-4">← Về lịch ngày 4</a>
+<h2>Chủ Nhật · 04/10/2026 · Bảo tàng & về tối</h2>
+<div class="info-bar"><span>⭐ Bảo tàng sáng Chủ Nhật</span><span>🧳 Trả phòng trước 12:00</span><span>✈ Bay về tối</span></div>
 <div class="cards">
-<div class="card"><h3>4.2 Hồ Gươm buổi sáng</h3><div class="meta"><span class="pill">0 km</span><span class="pill">60 phút</span></div><p>Quay lại cùng một địa điểm nhưng vào buổi sáng tạo trải nghiệm khác Ngày 1: ít vội, nhiều sinh hoạt địa phương, thích hợp chụp ảnh và đi bộ nhẹ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">Google Maps</a></div></div>
-<div class="card"><h3>4.3 Mua đặc sản</h3><div class="meta"><span class="pill">Khu trung tâm</span><span class="pill">60–90 phút</span></div><p>Danh sách gợi ý: cốm/bánh cốm, ô mai, trà và cà phê. Ưu tiên hàng đóng gói gọn, có nhãn rõ ràng để mang lên máy bay thuận tiện.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanoi+specialty+shop+Hoan+Kiem">Tìm trên Maps</a></div></div>
-<div class="card"><h3>4.4 Café cuối chuyến</h3><div class="meta"><span class="pill">Gần khách sạn</span><span class="pill">~60 phút</span></div><p>Không nên đi xa. Dùng block này làm buffer để checkout, đóng hành lý và điều chỉnh nếu các hoạt động buổi sáng bị trễ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=cafe+Hoan+Kiem+Hanoi">Tìm café gần Hồ Gươm</a></div></div>
-</div></section>
+<article class="card" id="military" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">⭐</span><span class="badge must">⭐ Ưu tiên giữ</span></div>
+<h3>Bảo tàng Lịch sử Quân sự Việt Nam</h3>
+<div class="meta"><span class="pill">⏱ 2 giờ 15 phút</span><span class="pill">Mục 4.2 · 4.3</span></div>
+<p>Điểm ưu tiên của ngày: câu chuyện lịch sử trong nhà và bộ sưu tập khí tài ngoài trời. Chọn trọng tâm để xem có chiều sâu.</p>
+<div class="facts"><span>📏 Xa trung tâm; km đường bộ cần xem Maps</span><span>🕐 Nên đến: 08:15–10:30 Chủ Nhật 04/10</span><span>📍 Km 6+500, Đại lộ Thăng Long · cơ sở mới</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Website chính thức: 08:00–16:30 vào Thứ Ba, Tư, Năm, Bảy và Chủ Nhật; nghỉ Thứ Hai / Thứ Sáu. Đã chuyển khỏi 02/10. <a href="https://btlsqsvn.mod.gov.vn/dich-vu-bao-tang" target="_blank" rel="noopener noreferrer">Đối chiếu 23/09/2026 ↗</a>. Vé và thông báo đột xuất cần xem lại trước chuyến đi.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+Km6%2B500+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="morning-lake" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🌿</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Hồ Gươm trước khi về</h3>
+<div class="meta"><span class="pill">⏱ 15–20 phút nếu còn giờ</span><span class="pill">Lựa chọn trong mục 4.7</span></div>
+<p>Dạo đoạn hồ gần nơi ở sau khi đã về từ bảo tàng; có thể thay cho café. Một vòng ngắn để khép lại chuyến đi.</p>
+<div class="facts"><span>📏 0 km · mốc trung tâm</span><span>🕐 Nên đến: Đầu chiều 04/10, sau bảo tàng</span><span>📍 Bờ hồ gần khách sạn</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Giữ gần nơi ở và điều chỉnh theo giờ bay.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="gifts" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">🎁</span><span class="eyebrow">DỪNG CHÂN & KHÁM PHÁ</span></div>
+<h3>Mua đặc sản</h3>
+<div class="meta"><span class="pill">⏱ 45 phút</span><span class="pill">Mục 4.6</span></div>
+<p>Cốm, bánh cốm, ô mai, trà và cà phê — chọn vài món thật thích. Ưu tiên gói gọn, có nhãn, hạn dùng và cách bảo quản.</p>
+<div class="facts"><span>📏 Trong khu Hoàn Kiếm, tùy cửa hàng</span><span>🕐 Nên đến: 12:45 ngày 04/10, hoặc mua từ tối 02/10</span><span>📍 Chưa chọn cửa hàng cụ thể</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Maps là tìm kiếm, chưa phải cửa hàng đã chọn; kiểm tra quy định hành lý của hãng.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Hanoi+specialty+shop+Hoan+Kiem">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="last-cafe" tabindex="-1">
+<div class="card-top"><span class="card-icon" aria-hidden="true">☕</span><span class="badge optional">✨ Linh hoạt</span></div>
+<h3>Café cuối chuyến</h3>
+<div class="meta"><span class="pill">⏱ 45 phút</span><span class="pill">Mục 4.7</span></div>
+<p>Một tách café cuối cùng trước khi lấy hành lý. Đã trả phòng và gửi hành lý; lấy đồ trước mốc ra sân bay.</p>
+<div class="facts"><span>📏 Gần khách sạn, không đi xa</span><span>🕐 Nên đến: 13:30 ngày 04/10, theo giờ bay</span><span>📍 Chưa chọn quán; ưu tiên gần nơi ở</span></div>
+<details>
+<summary class="text-link">Lưu ý trước khi đến</summary>
+<p>Có thể bỏ để tăng khoảng dự phòng sân bay.</p></details>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=cafe+Hoan+Kiem+Hanoi">📍 Mở Google Maps</a></div>
+</article>
+<article class="card" id="breakfast" tabindex="-1"><span class="card-icon" aria-hidden="true">🍜</span>
+<h3>Bữa sáng nhẹ nhàng</h3>
+<p>06:30–07:00 · 30 phút: bánh cuốn / xôi hoặc món chưa thử. Chọn gần khách sạn trong khu Hoàn Kiếm; địa chỉ và khoảng cách sẽ xác định khi có nơi ở.</p>
+<div class="actions">
+<a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=banh+cuon+xoi+Hoan+Kiem+Hanoi">📍 Mở Google Maps</a></div>
+</article></div>
+<div class="airport" id="airport" tabindex="-1">
+<div class="eyebrow">✈ AIRPORT BUFFER · KHOẢNG DỰ PHÒNG</div>
+<h3>Tính ngược từ giờ cất cánh</h3>
+<p><strong>Gợi ý rời khách sạn trước chuyến bay 4 giờ.</strong> Đây là mốc lập kế hoạch cho chuyến nội địa; tăng thêm khi trời xấu, giờ cao điểm hoặc hãng yêu cầu sớm hơn.</p>
+<div class="airport-steps"><span>🚗 60–90 phút đi Nội Bài</span><span>＋ 30 phút dự phòng đường</span><span>＋ khoảng 2 giờ tại sân bay</span></div>
+<p>Ví dụ bay 17:00 → lấy xong hành lý và rời khách sạn khoảng 13:00. Nếu bay 14:00 → rời khoảng 10:00, bỏ café / ăn trưa và trả phòng sớm. Kiểm tra hạn đóng quầy, cửa ra tàu bay theo hãng.</p>
+<p>Đã chốt về tối 04/10, giờ cất cánh cụ thể còn thiếu. Nếu “về tối” là giờ đáp TP.HCM thì phải tính ngược từ giờ cất cánh Hà Nội; không dùng giờ đáp làm mốc T.</p></div>
+</section>
 
 <section id="tips" class="panel">
-<h2>Lưu ý vận hành chuyến đi</h2>
-<div class="cards">
-<div class="card"><h3>Giờ mở cửa</h3><p>Lăng Bác và Bảo tàng Lịch sử Quân sự là hai điểm cần kiểm tra kỹ nhất trước chuyến đi. Lăng có lịch viếng theo ngày/mùa và có đợt bảo trì định kỳ; Bảo tàng Quân sự thường đóng Thứ 2 và Thứ 6.</p></div>
-<div class="card"><h3>Khoảng cách</h3><p>Các con số trên là khoảng cách định hướng từ Hồ Hoàn Kiếm hoặc giữa các điểm chính, không phải cam kết quãng đường lái xe. Google Maps sẽ tự tính tuyến thực tế theo giao thông tại thời điểm đi.</p></div>
-<div class="card"><h3>Ngày 2 khá dày</h3><p>Nếu Bảo tàng Quân sự khiến lịch chậm, hãy rút Hoàng thành còn khoảng 60 phút và xem Phan Đình Phùng như chặng đi ngang. Không nên cắt thời gian bảo tàng xuống dưới khoảng 2 giờ.</p></div>
-<div class="card"><h3>Ninh Bình</h3><p>Tràng An + Hang Múa là đủ cho một ngày. Thời tiết xấu hoặc mưa lớn nên ưu tiên an toàn và giảm phần leo Hang Múa.</p></div>
-<div class="card"><h3>Sân bay</h3><p>Ngày 4 giữ lịch nhẹ. Từ trung tâm Hà Nội đến Nội Bài cần chừa thêm buffer cho giao thông và thời gian làm thủ tục chuyến bay nội địa.</p></div>
-</div></section>
+<div id="dated-info" tabindex="-1">
+<div class="eyebrow">01–04/10/2026 · TRA CỨU 23/09/2026</div>
+<h2>Thời tiết theo ngày đi</h2>
+<p>Dự báo còn trước chuyến đi 8–11 ngày và các nguồn đang chênh lệch lớn. Đây là ảnh chụp dữ liệu lúc tra cứu, không tự cập nhật; chưa dùng để chốt giờ mưa, hủy chuyến hay quyết định leo núi.</p>
+<div class="dated-table"><table><thead><tr><th>Ngày / nơi đến</th><th>Dữ liệu đọc được</th><th>Áp dụng vào lịch</th></tr></thead><tbody>
+<tr><td><strong>Thứ Năm 01/10</strong><br>Hà Nội</td><td>AccuWeather: thấp ~22°C, cao ~29°C (72/85°F). EaseWeather: 26–35°C, nhiều mây.</td><td>Đi bộ chia đoạn, mang nước và áo mưa gọn; không mặc định trời thu mát.</td></tr>
+<tr><td><strong>Thứ Sáu 02/10</strong><br>Hà Nội</td><td>AccuWeather: ~23–29°C (73/84°F). EaseWeather: 26–34°C, có khả năng dông.</td><td>Giữ nghỉ trưa 90 phút. Dông: bỏ chụp ảnh ngoài phố / dạo hồ, vào quán.</td></tr>
+<tr><td><strong>Thứ Bảy 03/10</strong><br>Ninh Bình</td><td>EaseWeather: 26–35°C, nắng, UV 8. Nguồn này chưa được đối chiếu bằng dự báo địa phương đúng ngày. Trang AccuWeather mở được chỉ hiện trung bình lịch sử, không dùng làm dự báo.</td><td>Chuẩn bị cho nắng nóng; Hang Múa linh hoạt theo trời thực tế. Có dông / bậc trơn thì không leo.</td></tr>
+<tr><td><strong>Chủ Nhật 04/10</strong><br>Hà Nội</td><td>AccuWeather: ~24–29°C (76/84°F). EaseWeather: 22–32°C, mưa rào; khác rõ so với nguồn còn lại.</td><td>Ưu tiên trưng bày trong nhà ở bảo tàng; tăng dự phòng đường ra sân bay nếu mưa.</td></tr>
+</tbody></table></div>
+<p class="source">Nguồn theo ngày: <a href="https://www.accuweather.com/en/vn/hanoi/2-353412_1_al/october-weather/2-353412_1_al" target="_blank" rel="noopener noreferrer">AccuWeather Hà Nội tháng 10/2026 ↗</a> · <a href="https://www.easeweather.com/asia/vietnam/hanoi/october" target="_blank" rel="noopener noreferrer">EaseWeather Hà Nội ↗</a> · <a href="https://www.easeweather.com/asia/vietnam/ninh-binh/october" target="_blank" rel="noopener noreferrer">EaseWeather Ninh Bình ↗</a>. Độ tin cậy để lên lịch chi tiết: thấp; không lấy trung bình hai nguồn để tạo một dự báo mới. Kiểm tra lại 29–30/09; riêng Ninh Bình kiểm tra tối 02/10 và sáng 03/10, đối chiếu <a href="https://www.nchmf.gov.vn/kttvsite/" target="_blank" rel="noopener noreferrer">Trung tâm Dự báo KTTV quốc gia ↗</a> và đơn vị vận hành Tràng An.</p></div>
+<div id="trip-events" tabindex="-1">
+<div class="eyebrow">SỰ KIỆN TRÙNG CHUYẾN ĐI</div>
+<h2>Chọn thêm một trải nghiệm, không dồn lịch</h2>
+<div class="note-grid">
+<article class="note-card">
+<h3>01–04/10 · Lễ hội Văn hóa Thế giới</h3>
+<p>Kế hoạch tổ chức trùng cả bốn ngày, có hoạt động tại Hoàng thành. Ngày 02/10 đã đến Hoàng thành nên thuận để kết hợp nếu chương trình hoạt động lúc đó; lịch sân khấu, vé và cổng vào phải kiểm tra riêng.</p>
+<a href="https://baochinhphu.vn/le-hoi-van-hoa-the-gioi-tai-ha-noi-lan-thu-hai-hoi-tu-di-san-kien-tao-tuong-lai-10226080717462024.htm" target="_blank" rel="noopener noreferrer">Báo Chính phủ · kế hoạch 2026 ↗</a>
+</article>
+<article class="note-card">
+<h3>20:00 · Thứ Năm 01/10</h3>
+<p>Báo Tin tức nêu khai mạc tại Hoàng thành. Đây là phương án thay cho dạo Phố cổ / Tạ Hiện tối đầu, không cộng thêm cả hai. Dành thời gian đi xe và vào cổng; chưa xác nhận vé / điều kiện vào lễ khai mạc.</p>
+<a href="https://baotintuc.vn/tu-ngay-1-410-dien-ra-le-hoi-van-hoa-the-gioi-tai-ha-noi-post1388064.html" target="_blank" rel="noopener noreferrer">Báo Tin tức · giờ khai mạc ↗</a>
+</article>
+<article class="note-card">
+<h3>01–04/10 · Hội Sách Hà Nội XI</h3>
+<p>Kế hoạch dự kiến: trưng bày trên phố Đinh Tiên Hoàng, khai mạc 20:00 ngày 02/10 tại 47 Hàng Dầu. Có thể ghé khi dạo hồ 01/10 hoặc thay mua quà chiều 04/10. Muốn xem khai mạc 02/10: rút café Hồ Tây và đi sớm.</p>
+<a href="https://thanglong.chinhphu.vn/nhieu-hoat-dong-hap-dan-tai-hoi-sach-ha-noi-lan-thu-xi-103260213103052466.htm" target="_blank" rel="noopener noreferrer">Báo Chính phủ · kế hoạch Hội Sách ↗</a>
+</article>
+<article class="note-card">
+<h3>09:00–11:00 · Thứ Bảy 03/10</h3>
+<p>“Sắc màu năm châu” tại phố đi bộ Hồ Gươm theo kế hoạch Thành phố. Trùng đúng chuyến Tràng An nên không đưa vào lịch chính; không thể tham dự đồng thời với Ninh Bình.</p>
+<a href="https://thanhuyhanoi.vn/tin-tuc/kinh-te-van-hoa-xa-hoi/ha-noi-phoi-hop-to-chuc-le-hoi-van-hoa-the-gioi-lan-thu-hai-50053526.html" target="_blank" rel="noopener noreferrer">Thành ủy Hà Nội · lịch diễu hành ↗</a>
+</article>
+<article class="note-card">
+<h3>Chủ Nhật 04/10 · ưu tiên chuyến bay</h3>
+<p>Kế hoạch lễ hội có bế mạc ngày 04/10; chưa có giờ phù hợp để ghép với chuyến bay tối. Không xếp dự bế mạc. Hoàn thành bảo tàng buổi sáng, giữ chiều linh hoạt.</p>
+<a href="https://baochinhphu.vn/le-hoi-van-hoa-the-gioi-tai-ha-noi-lan-thu-hai-hoi-tu-di-san-kien-tao-tuong-lai-10226080717462024.htm" target="_blank" rel="noopener noreferrer">Kế hoạch bế mạc ↗</a>
+</article>
+<article class="note-card">
+<h3>Ninh Bình · 03/10</h3>
+<p>Chưa tìm được thông báo sự kiện riêng đúng ngày 03/10 từ nguồn du lịch địa phương đã tra cứu. Giữ Tràng An + Hang Múa; điều này không có nghĩa không có sự kiện.</p>
+</article>
+</div>
+<p class="source">Sự kiện là kế hoạch công bố, có thể đổi giờ / địa điểm. Hội Sách dựa trên bài ngày 13/02/2026, chưa xác nhận thông báo triển khai sát ngày. Chưa coi bất kỳ lễ khai mạc nào là miễn phí hoặc đã có vé. Lễ hội có thể làm đông / đổi lối tiếp cận Hoàng thành và Hồ Gươm — đây là dự phòng kế hoạch, chưa phải thông báo cấm đường.</p></div>
+<div class="eyebrow">CHUẨN BỊ MỘT CHÚT, THẢNH THƠI HƠN</div>
+<h2>Những điều nên biết trước khi đi</h2>
+<div class="note-grid">
+<article class="note-card">
+<div>🏛</div>
+<h3>Lịch viếng Lăng</h3>
+<p>Tu bổ 04/09–02/11/2026. Đón khách viếng trở lại 03/11. Khu vực ngoài có quy định tiếp cận riêng.</p>
+<a target="_blank" rel="noopener noreferrer" href="https://btllang.mod.gov.vn/tin-tuc/tin-tu-bo-tu-lenh-lang/16007-thong-bao-ke-hoach-tu-bo-dinh-ky-lang-chu-tich-ho-chi-minh-nam-2026.html">Thông báo Bộ Tư lệnh Lăng ↗</a>
+</article>
+<article class="note-card">
+<div>⭐</div>
+<h3>Bảo tàng Quân sự</h3>
+<p>Website chính thức ghi 08:00–16:30, nghỉ Thứ Hai và Thứ Sáu. Đi sáng Chủ Nhật 04/10; vẫn kiểm tra vé, hàng chờ và thông báo đặc biệt.</p>
+<a target="_blank" rel="noopener noreferrer" href="https://btlsqsvn.mod.gov.vn/dich-vu-bao-tang">Website chính thức bảo tàng ↗</a>
+</article>
+<article class="note-card">
+<div>🏯</div>
+<h3>Hoàng thành</h3>
+<p>Website đơn vị quản lý ghi 08:00–17:00 tất cả các ngày. Lịch này dùng bản tham quan rút gọn buổi sáng.</p>
+<a target="_blank" rel="noopener noreferrer" href="https://hoangthanhthanglong.vn/">Website Hoàng thành ↗</a>
+</article>
+<article class="note-card">
+<div>🌧</div>
+<h3>Khi Ninh Bình có mưa</h3>
+<p>Kiểm tra cảnh báo và hoạt động thuyền. Mưa lớn / sấm sét: không leo Hang Múa; đổi hoạt động hoặc nghỉ nếu điều kiện không an toàn.</p>
+</article>
+<article class="note-card">
+<div>⏳</div>
+<h3>Nếu Ngày 2 chậm hơn</h3>
+<p>Rút chặng chụp ảnh Phan Đình Phùng, giữ khoảng nghỉ. Bảo tàng đã chuyển sang sáng 04/10; Trấn Quốc dự kiến 15:00 thay vì sát giờ đóng cửa.</p>
+</article>
+<article class="note-card">
+<div>✈</div>
+<h3>Khoảng dự phòng sân bay</h3>
+<p>Tính ngược giờ bay, gợi ý rời khách sạn trước 4 giờ. Rút mua quà / café nếu cần. Yêu cầu thực tế theo hãng và tình trạng đường.</p>
+<a href="#airport">Xem cách tính →</a>
+</article></div>
+<div class="notice"><strong>Còn cần chốt:</strong> giờ bay cụ thể, khách sạn, số người / thể lực, phương tiện đi bảo tàng và Ninh Bình. Các quán ăn / café đang là gợi ý khu vực, chưa phải địa chỉ đã đặt.</div>
+<p class="source">Đối chiếu nguồn ngày 23/09/2026. Thông báo tu bổ Lăng và giờ Hoàng thành được xác minh theo nguồn đã dẫn. Lịch thường của bảo tàng đã đối chiếu website chính thức; kiểm tra thêm thông báo đột xuất; giờ các điểm khác, vé, hạn nhận khách và tuyến đường chưa được xác minh cho ngày đi cụ thể. Các khoảng cách là định hướng, ghi rõ mốc xuất phát; không phải đo đường trực tiếp. URL Maps hiện có được giữ nguyên và là liên kết tìm kiếm, cần kiểm tra đúng ghim / cổng vào.</p>
+</section>
 </main>
 
-<footer>Dữ liệu giờ mở cửa là thông tin tham khảo tại thời điểm xây dựng trang. Hãy kiểm tra lại website/Google Maps chính thức trước ngày đi.</footer>
+<footer><strong>Hà Nội × Ninh Bình</strong>Bốn ngày, đủ những khoảng dừng.<br>Lịch đọc được ngoại tuyến · Maps & nguồn tham khảo cần kết nối mạng.</footer>
 <script>
-document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
- document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
- btn.classList.add('active'); document.getElementById(btn.dataset.tab).classList.add('active');
- window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'});
-}));
+// Progressive enhancement: all content remains readable without JavaScript.
+const tabs = [...document.querySelectorAll('.tab')];
+const panels = [...document.querySelectorAll('.panel')];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+document.documentElement.classList.add('js');
+document.querySelector('.tabs .wrap').setAttribute('role', 'tablist');
+document.querySelector('.tabs .wrap').setAttribute('aria-label', 'Lịch trình và điểm đến');
+tabs.forEach(tab => {
+  tab.id = 'tab-' + tab.dataset.tab;
+  tab.setAttribute('role', 'tab');
+  tab.setAttribute('aria-controls', tab.dataset.tab);
+  const panel = document.getElementById(tab.dataset.tab);
+  panel.setAttribute('role', 'tabpanel');
+  panel.setAttribute('aria-labelledby', tab.id);
+});
+function activate(panelId) {
+  tabs.forEach(tab => {
+    const active = tab.dataset.tab === panelId;
+    tab.classList.toggle('active', active);
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+  });
+  panels.forEach(panel => {
+    panel.hidden = panel.id !== panelId;
+    panel.classList.toggle('active', !panel.hidden);
+  });
+}
+function goToHash(shouldFocus = false) {
+  let id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  if (!id) { activate('plan'); return; }
+  const target = document.getElementById(id);
+  if (!target) return;
+  const panel = target.closest('.panel');
+  if (panel) activate(panel.id);
+  requestAnimationFrame(() => {
+    target.scrollIntoView({behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start'});
+    if (shouldFocus) {
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({preventScroll: true});
+    }
+  });
+}
+function navigate(id) {
+  if (location.hash === '#' + id) goToHash(true);
+  else location.hash = id;
+}
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => navigate(tab.dataset.tab));
+  tab.addEventListener('keydown', event => {
+    let next;
+    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = tabs.length - 1;
+    if (next === undefined) return;
+    event.preventDefault();
+    activate(tabs[next].dataset.tab);
+    tabs[next].focus();
+    history.replaceState(null, '', '#' + tabs[next].dataset.tab);
+  });
+});
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
+  const id = link.getAttribute('href').slice(1);
+  if (!document.getElementById(id)) return;
+  event.preventDefault();
+  navigate(id);
+});
+window.addEventListener('hashchange', () => goToHash(true));
+activate('plan');
+if (location.hash) goToHash();
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('reveal');
+    observer.unobserve(entry.target);
+  }), {threshold: 0.05});
+  document.querySelectorAll('.route').forEach(row => observer.observe(row));
+}
 </script>
 </body></html>
