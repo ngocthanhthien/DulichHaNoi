@@ -6,11 +6,11 @@
 <title>Hà Nội × Ninh Bình · Hành trình 4 ngày</title>
 <meta name="description" content="Bạn đồng hành Hà Nội – Ninh Bình: lịch trình 4 ngày, điểm đến, café và những khoảng nghỉ.">
 <style>
-:root{--cream:#f6f1e7;--paper:#fffcf6;--red:#702e39;--gold:#987236;--ink:#292c27;--muted:#67695e;--jade:#335e53;--line:#ded8ca;--day:var(--red)}
+:root{--cream:#f2e9d9;--paper:#fffdf8;--red:#821d38;--gold:#79551a;--ink:#192c30;--muted:#415357;--jade:#145b50;--line:#cbbda8;--day:var(--red)}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 'Segoe UI',Arial,sans-serif}
+body{margin:0;background:var(--cream);color:var(--ink);font:18px/1.7 'Segoe UI',Arial,sans-serif}
 button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 button{font:inherit}
 a{color:var(--red);text-underline-offset:4px}
@@ -19,105 +19,105 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offse
 .skip{position:fixed;top:-100px;background:var(--paper);padding:12px;z-index:100}
 .skip:focus{top:8px}
 
-header{position:relative;overflow:hidden;background:#273f37;color:var(--paper);padding:26px 28px 40px}
+header{position:relative;overflow:hidden;background:#521b30;color:var(--paper);padding:26px 28px 40px}
 header:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 25%,#c8aa6630,transparent 55%)}
-.brand{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #ffffff30;padding-bottom:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.brand{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #ffffff30;padding-bottom:18px;font-size:14px;letter-spacing:.16em;text-transform:uppercase}
 .brand span:last-child{color:#d2c4a7}
 .hero-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;position:relative;z-index:1;padding-top:38px}
-.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.eyebrow{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
 header .eyebrow{color:#dcc79f}
 h1,h2,h3{font-family:'Times New Roman',Georgia,serif;font-weight:400;line-height:1.15}
 h1{font-size:clamp(46px,6.7vw,78px);margin:16px 0 22px;letter-spacing:-.045em}
 h1 em{color:#e0c595;font-weight:400}
 header p{max-width:470px;color:#e0e4d9;margin:0 0 24px}
-.hero-meta{display:flex;gap:0;flex-wrap:wrap;font-size:14px}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;font-size:17px}
 .hero-meta span{padding:0 18px;border-left:1px solid #ffffff40}
 .hero-meta span:first-child{padding-left:0;border:0}
 .hero-meta strong{color:#ecd7b2}
 .hero-art{width:100%;max-height:310px;display:block}
-.art-caption{font-size:12px;letter-spacing:.12em;text-align:center;color:#d2c4a7}
-.journey{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;font-size:13px;color:#d3dace;position:relative;z-index:1}
+.art-caption{font-size:14px;letter-spacing:.12em;text-align:center;color:#d2c4a7}
+.journey{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;font-size:15px;color:#d3dace;position:relative;z-index:1}
 .journey a{color:inherit;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid #819385}
 .journey span{color:#cbb88c}
 
 .tabs{position:sticky;top:0;z-index:20;background:#fffcf6f5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
 .tabs .wrap{display:flex;gap:6px;padding:8px 20px;overflow-x:auto;scrollbar-width:thin}
-.tab{border:0;background:transparent;border-radius:6px;padding:12px 18px;min-height:46px;white-space:nowrap;color:var(--muted);cursor:pointer;font-size:14px;font-weight:600}
+.tab{border:0;background:transparent;border-radius:6px;padding:12px 18px;min-height:46px;white-space:nowrap;color:var(--muted);cursor:pointer;font-size:17px;font-weight:600}
 .tab.active{background:var(--red);color:#fff}
 .tab:hover:not(.active){background:#ece5d8}
 .panel{padding:36px 24px 60px;animation:enter .25s ease}
 .js .panel[hidden]{display:none}
-.panel h2{font-size:32px;margin:0 0 12px}
+.panel h2{font-size:36px;margin:0 0 12px}
 .section-head{margin-bottom:24px}
-.section-head p{color:var(--muted);font-size:14px;margin:10px 0 0}
+.section-head p{color:var(--muted);font-size:17px;margin:10px 0 0}
 .section-head .eyebrow{margin-bottom:10px}
-.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:18px 0}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin:18px 0}
 .day{--day:var(--red);border:1px solid var(--line);border-radius:14px;background:var(--paper);margin-bottom:28px;overflow:hidden}
-.day[data-day='2']{--day:#796033}
+.day[data-day='2']{--day:#78521b}
 .day[data-day='3']{--day:var(--jade)}
-.day[data-day='4']{--day:#7e6152}
+.day[data-day='4']{--day:#503c74}
 .dayhead{display:flex;gap:18px;align-items:center;padding:26px 28px 20px}
 .day-number{font:italic 52px/1 Georgia,serif;color:var(--day);opacity:.8}
-.dayhead h2{font-size:27px;margin:4px 0}
+.dayhead h2{font-size:32px;margin:4px 0}
 .dayhead .eyebrow{color:var(--day)}
-.dayhead p{font-size:14px;color:var(--muted);margin:8px 0 0}
-.info-bar{display:flex;gap:8px 20px;flex-wrap:wrap;background:#ece9df;padding:12px 28px;font-size:13px;color:#4b5149}
-.day-intro{font-size:14px;margin:16px 28px;color:var(--muted)}
-.period{display:flex;align-items:center;gap:12px;padding:20px 28px 12px;font-size:11px;letter-spacing:.17em;font-weight:700;color:var(--day)}
+.dayhead p{font-size:17px;color:var(--muted);margin:8px 0 0}
+.info-bar{display:flex;gap:8px 20px;flex-wrap:wrap;background:#ece9df;padding:12px 28px;font-size:15px;color:#4b5149}
+.day-intro{font-size:17px;margin:16px 28px;color:var(--muted)}
+.period{display:flex;align-items:center;gap:12px;padding:20px 28px 12px;font-size:14px;letter-spacing:.17em;font-weight:700;color:var(--day)}
 .period:after{content:'';height:1px;background:var(--line);flex:1}
 .timeline{padding:0 28px 18px}
 .route{display:grid;grid-template-columns:90px 28px minmax(0,1fr);gap:12px;position:relative;padding:11px 0 16px}
-.time{font-size:14px;font-weight:700;color:var(--day);padding-top:3px;font-variant-numeric:tabular-nums}
-.time small{display:block;color:var(--muted);font-size:11px;font-weight:400}
+.time{font-size:17px;font-weight:700;color:var(--day);padding-top:3px;font-variant-numeric:tabular-nums}
+.time small{display:block;color:var(--muted);font-size:14px;font-weight:400}
 .marker{position:relative;display:flex;justify-content:center}
 .marker:after{content:'';position:absolute;top:29px;bottom:-28px;width:1px;background:var(--line)}
 .route:last-child .marker:after{bottom:0}
-.dot{width:28px;height:28px;background:var(--cream);border:1px solid var(--line);border-radius:50%;font-size:14px;display:grid;place-items:center;z-index:1}
-.route-title{font-size:17px;font-weight:650;line-height:1.4}
+.dot{width:28px;height:28px;background:var(--cream);border:1px solid var(--line);border-radius:50%;font-size:17px;display:grid;place-items:center;z-index:1}
+.route-title{font-size:20px;font-weight:650;line-height:1.4}
 .route-title a{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:5px;padding:2px 0;min-height:44px}
 .route-title a:hover{color:var(--red);text-decoration:underline}
-.route-description{font-size:14px;color:var(--muted);margin:0 0 7px;max-width:740px}
-.duration{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.badge{display:inline-block;background:#eee2c9;color:#634b23;font-size:11px;border-radius:4px;padding:2px 7px;font-weight:600}
+.route-description{font-size:17px;color:var(--muted);margin:0 0 7px;max-width:740px}
+.duration{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#eee2c9;color:#634b23;font-size:14px;border-radius:4px;padding:2px 7px;font-weight:600}
 .badge.optional{background:#eeebe3;color:#65675c}
 .badge.recommended{background:#e4ece6;color:#355e4f}
-.transfer .route-title{font-size:15px;color:var(--muted)}
+.transfer .route-title{font-size:17px;color:var(--muted)}
 .transfer .dot{background:transparent}
-.day-end{border-top:1px solid var(--line);padding:14px 28px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:13px;color:var(--muted)}
+.day-end{border-top:1px solid var(--line);padding:14px 28px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:15px;color:var(--muted)}
 .text-link{display:inline-flex;min-height:44px;align-items:center;font-weight:600}
 
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;min-width:0;scroll-margin-top:100px;transition:transform .18s,box-shadow .18s}
-.card h3{font-size:25px;margin:12px 0}
-.card p{font-size:15px;margin:12px 0;color:#51574e}
+.card h3{font-size:30px;margin:12px 0}
+.card p{font-size:17px;margin:12px 0;color:var(--ink)}
 .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .card-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#eae6d8;font-size:22px;flex-shrink:0}
-.meta{font-size:14px;color:var(--muted)}
-.pill{display:inline-block;font-size:12px;background:#eeeade;border-radius:4px;padding:3px 8px;margin:0 4px 7px 0}
-.facts{display:grid;gap:7px;font-size:14px;color:#586153;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+.meta{font-size:17px;color:var(--muted)}
+.pill{display:inline-block;font-size:14px;background:#eeeade;border-radius:4px;padding:3px 8px;margin:0 4px 7px 0}
+.facts{display:grid;gap:7px;font-size:17px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-.btn{min-height:46px;padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--jade);color:#fff;text-decoration:none;border:1px solid var(--jade);border-radius:6px;font-size:14px;font-weight:600;transition:background .18s,transform .18s}
+.btn{min-height:46px;padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--jade);color:#fff;text-decoration:none;border:1px solid var(--jade);border-radius:6px;font-size:17px;font-weight:600;transition:background .18s,transform .18s}
 .btn.alt{background:transparent;color:var(--jade)}
 .btn:hover{background:#22473c;color:white;transform:translateY(-2px)}
-.back-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px;margin-bottom:18px}
+.back-link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;margin-bottom:18px}
 .note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
-.note-card{border:1px solid var(--line);background:#eee8dc;padding:20px;border-radius:10px;font-size:14px}
-.note-card h3{font-family:inherit;font-weight:650;font-size:15px;margin:8px 0}
-.note-card p{margin:7px 0;color:#5b5e52}
-.note-card a{font-size:13px;display:inline-flex;align-items:center;min-height:44px}
+.note-card{border:1px solid var(--line);background:#eee8dc;padding:20px;border-radius:10px;font-size:17px}
+.note-card h3{font-family:inherit;font-weight:650;font-size:17px;margin:8px 0}
+.note-card p{margin:7px 0;color:var(--muted)}
+.note-card a{font-size:15px;display:inline-flex;align-items:center;min-height:44px}
 .weather-strip{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
-.weather-strip span{font-size:13px;border:1px solid var(--line);background:#fff9e9;border-radius:5px;padding:8px 12px}
+.weather-strip span{font-size:15px;border:1px solid var(--line);background:#fff9e9;border-radius:5px;padding:8px 12px}
 .airport{background:#e4ece5;border:1px solid #bdcfc1;border-radius:10px;padding:22px;margin:20px 0}
-.airport h3{font-size:23px;margin:0 0 10px}
-.airport p{font-size:14px;margin:8px 0}
+.airport h3{font-size:28px;margin:0 0 10px}
+.airport p{font-size:17px;margin:8px 0}
 .airport-steps{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.airport-steps span{background:#f7faf4;padding:9px 12px;font-size:13px;border-radius:5px}
-.source{font-size:12px!important;color:var(--muted)!important}
+.airport-steps span{background:#f7faf4;padding:9px 12px;font-size:15px;border-radius:5px}
+.source{font-size:14px!important;color:var(--muted)!important}
 .source a{overflow-wrap:anywhere}
 .panel>.info-bar{border-radius:7px;margin-bottom:24px}
-.notice{background:#f0e5d3;border-left:3px solid var(--gold);padding:14px 18px;border-radius:4px;font-size:14px;margin:18px 0}
+.notice{background:#f0e5d3;border-left:3px solid var(--gold);padding:14px 18px;border-radius:4px;font-size:17px;margin:18px 0}
 .card:target{outline:2px solid var(--gold)}
-footer{padding:28px 24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center}
+footer{padding:28px 24px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);text-align:center}
 footer strong{display:block;font:22px Georgia,serif;color:var(--red);margin-bottom:8px}
 
 @media(hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 12px 25px #342d1810}
@@ -130,15 +130,15 @@ to{opacity:1;transform:none}
 @media(min-width:900px){.hero-art{min-height:290px}
 .plan-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px}
 .plan-aside{position:sticky;top:94px;align-self:start}
-.plan-aside a{display:flex;min-height:48px;align-items:center;border-bottom:1px solid var(--line);text-decoration:none;font-size:14px}
-.plan-aside p{font-size:13px;color:var(--muted)}
+.plan-aside a{display:flex;min-height:48px;align-items:center;border-bottom:1px solid var(--line);text-decoration:none;font-size:17px}
+.plan-aside p{font-size:15px;color:var(--muted)}
 }
 
 @media(max-width:899px){.plan-aside{display:none}
 .hero-layout{gap:12px}
 .note-grid{grid-template-columns:1fr 1fr}
 .hero-art{height:235px}
-.brand{font-size:10px}
+.brand{font-size:13px}
 }
 
 @media(max-width:600px){header{padding:20px 20px 28px}
@@ -147,31 +147,31 @@ to{opacity:1;transform:none}
 h1{font-size:54px;margin:12px 0 18px}
 .hero-art{height:175px;margin-top:8px}
 .art-caption{display:none}
-.hero-meta{font-size:13px}
+.hero-meta{font-size:15px}
 .hero-meta span{padding:0 10px}
-.journey{gap:8px;margin-top:18px;font-size:12px}
+.journey{gap:8px;margin-top:18px;font-size:14px}
 .tabs .wrap{padding:7px 12px}
 .tab{padding:10px 14px}
 .panel{padding:26px 14px 40px}
-.panel h2{font-size:29px}
+.panel h2{font-size:32px}
 .cards,.note-grid{grid-template-columns:1fr}
 .dayhead{padding:22px 18px 16px;gap:14px}
-.dayhead h2{font-size:24px}
+.dayhead h2{font-size:29px}
 .day-number{font-size:43px}
 .info-bar{padding:12px 18px;gap:6px 14px}
 .day-intro{margin:14px 18px}
 .timeline{padding:0 16px 14px}
 .period{padding:18px 18px 10px}
 .route{grid-template-columns:64px 24px minmax(0,1fr);gap:9px}
-.dot{width:24px;height:24px;font-size:12px}
-.time{font-size:13px}
-.route-title{font-size:16px}
-.route-description{font-size:14px}
+.dot{width:24px;height:24px;font-size:14px}
+.time{font-size:15px}
+.route-title{font-size:18px}
+.route-description{font-size:17px}
 .day-end{padding:12px 18px;flex-wrap:wrap}
 .card{padding:20px}
 .actions .btn{flex:1 1 100%}
 .note-grid{margin:18px 0}
-.card h3{font-size:25px}
+.card h3{font-size:30px}
 .airport{padding:18px}
 .airport-steps{display:grid;gap:8px}
 }
@@ -194,7 +194,24 @@ body{background:white}
 }
 
 
-.dated-table{overflow-x:auto;margin:20px 0}.dated-table table{width:100%;border-collapse:collapse;background:var(--paper);font-size:14px}.dated-table th,.dated-table td{padding:14px;text-align:left;border:1px solid var(--line);vertical-align:top}.dated-table th{background:#e4ece5}.dated-table td:first-child{min-width:130px}#dated-info,#trip-events{scroll-margin-top:100px;margin-bottom:32px}@media(max-width:600px){.dated-table table,.dated-table tbody,.dated-table tr,.dated-table td{display:block;width:100%}.dated-table thead{display:none}.dated-table tr{margin-bottom:14px;border:1px solid var(--line);border-radius:8px;overflow:hidden}.dated-table td{border:0;border-bottom:1px solid var(--line)}.dated-table td:first-child{background:#e4ece5}.dated-table td:last-child{border-bottom:0}}
+.dated-table{overflow-x:auto;margin:20px 0}.dated-table table{width:100%;border-collapse:collapse;background:var(--paper);font-size:17px}.dated-table th,.dated-table td{padding:14px;text-align:left;border:1px solid var(--line);vertical-align:top}.dated-table th{background:#e4ece5}.dated-table td:first-child{min-width:130px}#dated-info,#trip-events{scroll-margin-top:100px;margin-bottom:32px}@media(max-width:600px){.dated-table table,.dated-table tbody,.dated-table tr,.dated-table td{display:block;width:100%}.dated-table thead{display:none}.dated-table tr{margin-bottom:14px;border:1px solid var(--line);border-radius:8px;overflow:hidden}.dated-table td{border:0;border-bottom:1px solid var(--line)}.dated-table td:first-child{background:#e4ece5}.dated-table td:last-child{border-bottom:0}}
+
+/* High-contrast editorial palette and larger reading sizes. */
+body{background:radial-gradient(ellipse at 10% 8%,#fff9e9 0,transparent 45%),var(--cream)}
+header{background:linear-gradient(120deg,#401b2d,#76203e 68%,#441c31)}
+header p{font-size:19px;color:#fff2e4}header .eyebrow,.brand span:last-child{color:#f5d79f}
+h1 em{color:#ffdc94}.hero-meta{row-gap:12px}.hero-meta strong{color:#ffdf9e}.journey{color:#fff5e4}.journey a{border-color:#e2b984}.art-caption{color:#ffdf9e}
+.tabs{background:#fffdf8;border-bottom:2px solid #bca78d}.tab{font-size:17px;min-height:50px}.tab.active{box-shadow:0 3px 0 #e1b555}
+.day{border-color:#bdad94;box-shadow:0 8px 28px #3429140b;margin-bottom:36px}.dayhead{background:#fff9ef}.day-number{opacity:1}.dayhead p{color:#415357}
+.info-bar{background:#e1eee6;color:#173f38;border-top:1px solid #bed0c3;border-bottom:1px solid #bed0c3;font-weight:600}
+.period{letter-spacing:.08em;font-size:15px}.period:after{background:#bba68a}.marker:after{width:2px;background:#b9ae9b}.dot{background:#f5dfb0;border-color:#bea16b}
+.route-title{font-size:21px}.route-title a{color:#172d31}.route-title a:hover{color:var(--red)}.time{font-size:18px}.time small{font-size:15px}.route{grid-template-columns:102px 28px minmax(0,1fr);padding-bottom:24px}.route-description{font-size:17px;line-height:1.75}.duration{font-size:15px;color:#415357}.badge{font-size:14px;padding:4px 9px;background:#f5dfb0;color:#563800}.badge.optional{color:#4e3c69;background:#ece3f3}.badge.recommended{color:#174d3c;background:#d8eee0}
+.card{border-top:4px solid var(--jade);box-shadow:0 6px 24px #28372e09}.card p{font-size:18px;line-height:1.75}.card h3{font-size:31px}.card-icon{background:#e1eee6}.card-top{flex-wrap:wrap}.pill{color:#34443e;background:#eee8db;font-size:15px}.facts{font-size:17px}.btn{font-size:17px;min-height:52px;background:#145b50;border-color:#145b50}.btn.alt{color:#145b50;background:#f2f8f2}.notice{background:#fff0cf;border-color:#986211;color:#493719;font-size:17px}.note-card{background:#fffaf0;border-top:4px solid var(--red)}.note-card h3{font-size:20px}.note-card p{font-size:17px}.source{font-size:15px!important}.airport{background:#dceee4;border-color:#8fb69f;color:#193f34}
+.day-visual{margin:0;background:#123f3c;position:relative;border-bottom:1px solid #a89271;overflow:hidden}.day-visual svg{display:block;width:100%;height:190px}.day-visual figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#183c39;color:#fff3d6;padding:12px 24px;font-size:15px}.day-visual figcaption strong{font-weight:600}.day-visual figcaption span{color:#f3d399;font-size:14px}.panel>.day-visual{border-radius:12px;margin:0 0 24px}.day[data-day='1'] .day-visual figcaption{background:#652139}.day[data-day='2'] .day-visual figcaption{background:#513b24}.day[data-day='4'] .day-visual figcaption{background:#40314f}
+@media(min-width:900px){.plan-layout{grid-template-columns:minmax(0,1fr) 190px;gap:24px}.plan-aside a{font-size:16px}.plan-aside p{font-size:15px}}
+@media(max-width:600px){body{font-size:18px}.hero-meta span{border:0;padding:0 14px 0 0}.hero-meta span:first-child{flex-basis:100%}.hero-art{height:210px}.dayhead{align-items:flex-start}.day-number{font-size:40px}.dayhead h2{font-size:29px}.day-visual svg{height:150px}.day-visual figcaption{padding:12px 16px;flex-wrap:wrap;gap:2px}.day-visual figcaption span{font-size:13px}.route{grid-template-columns:28px minmax(0,1fr);column-gap:12px;row-gap:3px;padding:12px 0 24px}.route>.time{grid-column:2;font-size:18px;padding:0}.time small{display:inline;margin-left:5px;font-size:15px}.route>.marker{grid-column:1;grid-row:1 / span 2}.route>div:last-child{grid-column:2}.dot{width:28px;height:28px;font-size:15px}.marker:after{top:29px;bottom:-36px}.route-title,.transfer .route-title{font-size:20px}.route-description{font-size:17px}.card h3{font-size:29px}.card p{font-size:18px}.period{font-size:15px}.info-bar{font-size:16px}.day-intro{font-size:17px}.day-end{font-size:16px}.dated-table table{font-size:17px}.journey{font-size:15px}.eyebrow{font-size:13px;letter-spacing:.1em}}
+@media(max-width:380px){.dayhead{display:block}.day-number{display:none}.dayhead h2{margin-top:10px}}
+@media print{.day-visual{display:none}header{background:white;color:black}}
 </style>
 </head>
 <body>
@@ -254,6 +271,7 @@ body{background:white}
 <div class="plan-layout">
 <div>
 <article class="day" id="day-1" data-day="1">
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa phố cũ, sắc đèn & hương café" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#f3ce97"/><circle cx="743" cy="57" r="33" fill="#fff2ce"/><path d="M0 205H900V250H0" fill="#b76650"/><path d="M0 231H900" stroke="#e9b18a" stroke-width="3"/><g stroke="#63273a" stroke-width="4"><path d="M30 93H190V208H30Z" fill="#faf0d3"/><path d="M23 95L110 52L199 95Z" fill="#9c3b43"/><path d="M214 55H362V208H214Z" fill="#e9a963"/><path d="M202 59H374V75H202Z" fill="#77303e"/><path d="M387 109H514V208H387Z" fill="#f9e5b7"/><path d="M380 109L450 69L522 109Z" fill="#9c3b43"/><path d="M540 75H677V208H540Z" fill="#f0bc77"/></g><g fill="#275c51"><path d="M54 112h30v42H54zm62 0h30v42h-30zM242 89h32v44h-32zm55 0h32v44h-32zM408 127h28v35h-28zm48 0h28v35h-28zM560 98h31v43h-31zm51 0h31v43h-31z"/><path d="M78 171q30-40 60 0v37H78zm180-9h43v46h-43zm173 18h30v28h-30zm150-14h35v42h-35z"/></g><g stroke="#652139" stroke-width="3" fill="#e09e43"><path d="M0 34Q350 98 694 37" fill="none"/><path d="M173 59v20m183-11v21m177-25v21"/><ellipse cx="173" cy="94" rx="12" ry="17"/><ellipse cx="356" cy="102" rx="12" ry="17"/><ellipse cx="533" cy="99" rx="12" ry="17"/></g><path d="M747 209V103" stroke="#55432a" stroke-width="9"/><g fill="#315e4c"><circle cx="739" cy="113" r="39"/><circle cx="779" cy="128" r="32"/><circle cx="724" cy="145" r="33"/></g><g stroke="#633744" stroke-width="4" fill="none"><circle cx="813" cy="206" r="20"/><circle cx="869" cy="206" r="20"/><path d="m813 206 24-37 32 37h-56l20-25h25m-19-12h-15m34 12 7-24h-12"/></g></svg><figcaption><strong>Phố cũ, sắc đèn & hương café</strong><span>HÀ NỘI CỔ · MINH HỌA</span></figcaption></figure>
 <div class="dayhead"><span class="day-number">01</span>
 <div>
 <div class="eyebrow">Thứ Năm · 01/10/2026</div>
@@ -344,6 +362,7 @@ body{background:white}
 <a class="text-link" href="#d1">Điểm đến ngày 1 →</a></div>
 </article>
 <article class="day" id="day-2" data-day="2">
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa dấu xưa giữa lòng thành phố" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#edcf9a"/><circle cx="750" cy="58" r="37" fill="#fff5d5"/><path d="M0 215Q450 181 900 215V250H0" fill="#8e9b6c"/><path d="M240 227V134H662V227" fill="#b57449" stroke="#71422e" stroke-width="3"/><path d="M260 131H640V146H260Z" fill="#ebbd81"/><path d="M314 130V88H586V130" fill="#ead4a7"/><path d="M300 88L345 61H555L601 88Z" fill="#732f32"/><path d="M363 61V40H537V61" fill="#e8c18a"/><path d="M350 40L391 14H510L550 40Z" fill="#732f32"/><g fill="#412f2e"><path d="M300 227v-34a26 26 0 0 1 52 0v34zm125 0v-42a29 29 0 0 1 58 0v42zm125 0v-34a26 26 0 0 1 52 0v34zM340 100h23v26h-23zm55 0h23v26h-23zm64 0h23v26h-23zm67 0h23v26h-23z"/></g><path d="M382 249L426 228H482L535 249" fill="#e9dbb4"/><g fill="#315b48"><path d="M32 204Q58 98 90 185Q116 57 151 160Q194 114 215 206Z"/><path d="M700 207Q728 134 752 188Q787 89 815 166Q850 120 899 207Z"/></g><path d="M94 213V151m55 62v-63m653 63v-61" stroke="#6c593a" stroke-width="5"/></svg><figcaption><strong>Dấu xưa giữa lòng thành phố</strong><span>DI SẢN HÀ NỘI · MINH HỌA</span></figcaption></figure>
 <div class="dayhead"><span class="day-number">02</span>
 <div>
 <div class="eyebrow">Thứ Sáu · 02/10/2026</div>
@@ -446,6 +465,7 @@ body{background:white}
 <a class="text-link" href="#dated-info">Thời tiết & sự kiện →</a></div>
 </article>
 <article class="day" id="day-3" data-day="3">
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa một mái chèo giữa miền núi nước" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#dfe8c4"/><circle cx="725" cy="59" r="34" fill="#fff4c6"/><path d="M0 181Q35 128 71 152Q110 46 145 100Q183 160 204 74Q240-1 272 115Q300 162 337 109Q380 35 409 139Q461 198 500 95Q540 24 577 120Q612 164 643 99Q687 1 720 132Q765 188 801 74Q836 22 900 161V250H0Z" fill="#7b9e82"/><path d="M0 217Q38 72 85 106Q110 165 131 199Q173 70 205 141L225 227Q288 131 319 171L353 230Q403 113 437 183L470 218Q553 93 582 161L602 224Q669 125 711 186L746 218Q789 142 832 157L900 213V250H0Z" fill="#285f52"/><path d="M0 236Q190 212 407 237Q610 256 900 210V250H0" fill="#72b3a1"/><g stroke="#c9dfb8" stroke-width="2"><path d="M290 247h75m170-12h69m-216-9h36m343 9h82"/></g><path d="M441 229q44 19 90-3l-12 12h-62Z" fill="#edb75d" stroke="#694733" stroke-width="2"/><path d="m488 228 9-24m-2 8 31 23" stroke="#f8d994" stroke-width="3"/><path d="m484 204 14-13 15 13Z" fill="#f8e3b7"/><path d="M0 0H900" stroke="#b3c798"/></svg><figcaption><strong>Một mái chèo giữa miền núi nước</strong><span>TRÀNG AN · NINH BÌNH · MINH HỌA</span></figcaption></figure>
 <div class="dayhead"><span class="day-number">03</span>
 <div>
 <div class="eyebrow">Thứ Bảy · 03/10/2026</div>
@@ -537,6 +557,7 @@ body{background:white}
 <a class="text-link" href="#d3">Điểm đến ngày 3 →</a></div>
 </article>
 <article class="day" id="day-4" data-day="4">
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa giữ một miền ký ức mang về" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#e5d6df"/><circle cx="743" cy="58" r="36" fill="#fff0c9"/><path d="M0 196H900V250H0" fill="#6f7d78"/><path d="M64 95H534V195H64Z" fill="#f8efda" stroke="#627068" stroke-width="3"/><path d="M58 88H543V102H58Z" fill="#51444f"/><g fill="#3b6058"><path d="M89 118H509V130H89zm0 23H509V153H89z"/></g><path d="M292 195V52H325V195" fill="#bca27d"/><path d="M301 52V26h15v26" fill="#51444f"/><path d="M325 75h48V46h-48Z" fill="#a92d43"/><path d="m346 52 2 5h6l-5 4 2 6-5-4-5 4 2-6-4-4h5Z" fill="#f9d46c"/><g fill="#33554a" stroke="#244437" stroke-width="3"><path d="M128 183h108l-12-17h-80zM167 165v-15h28l15 15M191 153l53-13"/><rect x="126" y="183" width="111" height="16" rx="8"/></g><g fill="#e6d6bc" stroke="#6b5252" stroke-width="4"><path d="M662 149h120v57q-60 30-120 0Z"/><path d="M782 157q52-2 32 34q-9 13-32 8" fill="none"/><ellipse cx="722" cy="149" rx="60" ry="12"/></g><ellipse cx="722" cy="149" rx="47" ry="7" fill="#734937"/><path d="M673 221q50 15 106 0" stroke="#efdfc4" stroke-width="6" fill="none"/><g stroke="#fff6e1" stroke-width="4" fill="none"><path d="M700 122q-15-17 0-31t0-28m38 59q-15-17 0-31t0-28"/></g></svg><figcaption><strong>Giữ một miền ký ức mang về</strong><span>BẢO TÀNG · CAFÉ · MINH HỌA</span></figcaption></figure>
 <div class="dayhead"><span class="day-number">04</span>
 <div>
 <div class="eyebrow">Chủ Nhật · 04/10/2026</div>
@@ -636,6 +657,7 @@ body{background:white}
 <section id="d1" class="panel">
 <a class="back-link" href="#day-1">← Về lịch ngày 1</a>
 <h2>Thứ Năm · 01/10/2026 · Hà Nội cổ</h2>
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa phố cũ, sắc đèn & hương café" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#f3ce97"/><circle cx="743" cy="57" r="33" fill="#fff2ce"/><path d="M0 205H900V250H0" fill="#b76650"/><path d="M0 231H900" stroke="#e9b18a" stroke-width="3"/><g stroke="#63273a" stroke-width="4"><path d="M30 93H190V208H30Z" fill="#faf0d3"/><path d="M23 95L110 52L199 95Z" fill="#9c3b43"/><path d="M214 55H362V208H214Z" fill="#e9a963"/><path d="M202 59H374V75H202Z" fill="#77303e"/><path d="M387 109H514V208H387Z" fill="#f9e5b7"/><path d="M380 109L450 69L522 109Z" fill="#9c3b43"/><path d="M540 75H677V208H540Z" fill="#f0bc77"/></g><g fill="#275c51"><path d="M54 112h30v42H54zm62 0h30v42h-30zM242 89h32v44h-32zm55 0h32v44h-32zM408 127h28v35h-28zm48 0h28v35h-28zM560 98h31v43h-31zm51 0h31v43h-31z"/><path d="M78 171q30-40 60 0v37H78zm180-9h43v46h-43zm173 18h30v28h-30zm150-14h35v42h-35z"/></g><g stroke="#652139" stroke-width="3" fill="#e09e43"><path d="M0 34Q350 98 694 37" fill="none"/><path d="M173 59v20m183-11v21m177-25v21"/><ellipse cx="173" cy="94" rx="12" ry="17"/><ellipse cx="356" cy="102" rx="12" ry="17"/><ellipse cx="533" cy="99" rx="12" ry="17"/></g><path d="M747 209V103" stroke="#55432a" stroke-width="9"/><g fill="#315e4c"><circle cx="739" cy="113" r="39"/><circle cx="779" cy="128" r="32"/><circle cx="724" cy="145" r="33"/></g><g stroke="#633744" stroke-width="4" fill="none"><circle cx="813" cy="206" r="20"/><circle cx="869" cy="206" r="20"/><path d="m813 206 24-37 32 37h-56l20-25h25m-19-12h-15m34 12 7-24h-12"/></g></svg><figcaption><strong>Phố cũ, sắc đèn & hương café</strong><span>HÀ NỘI CỔ · MINH HỌA</span></figcaption></figure>
 <div class="info-bar"><span>🚶 Đi bộ theo cụm</span><span>☕ Café & ẩm thực</span><span>📍 Hoàn Kiếm</span></div>
 <div class="cards">
 <article class="card" id="hoan-kiem" tabindex="-1">
@@ -720,6 +742,7 @@ body{background:white}
 <section id="d2" class="panel">
 <a class="back-link" href="#day-2">← Về lịch ngày 2</a>
 <h2>Thứ Sáu · 02/10/2026 · Di sản & Hồ Tây</h2>
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa dấu xưa giữa lòng thành phố" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#edcf9a"/><circle cx="750" cy="58" r="37" fill="#fff5d5"/><path d="M0 215Q450 181 900 215V250H0" fill="#8e9b6c"/><path d="M240 227V134H662V227" fill="#b57449" stroke="#71422e" stroke-width="3"/><path d="M260 131H640V146H260Z" fill="#ebbd81"/><path d="M314 130V88H586V130" fill="#ead4a7"/><path d="M300 88L345 61H555L601 88Z" fill="#732f32"/><path d="M363 61V40H537V61" fill="#e8c18a"/><path d="M350 40L391 14H510L550 40Z" fill="#732f32"/><g fill="#412f2e"><path d="M300 227v-34a26 26 0 0 1 52 0v34zm125 0v-42a29 29 0 0 1 58 0v42zm125 0v-34a26 26 0 0 1 52 0v34zM340 100h23v26h-23zm55 0h23v26h-23zm64 0h23v26h-23zm67 0h23v26h-23z"/></g><path d="M382 249L426 228H482L535 249" fill="#e9dbb4"/><g fill="#315b48"><path d="M32 204Q58 98 90 185Q116 57 151 160Q194 114 215 206Z"/><path d="M700 207Q728 134 752 188Q787 89 815 166Q850 120 899 207Z"/></g><path d="M94 213V151m55 62v-63m653 63v-61" stroke="#6c593a" stroke-width="5"/></svg><figcaption><strong>Dấu xưa giữa lòng thành phố</strong><span>DI SẢN HÀ NỘI · MINH HỌA</span></figcaption></figure>
 <div class="info-bar"><span>🏛 Di sản trung tâm</span><span>🌿 Trấn Quốc 15:00</span><span>☕ Café tối</span></div>
 
 <div class="notice">Ngày 02/10 là Thứ Sáu: bảo tàng nghỉ, đã dời sang 04/10. Lăng không đón khách viếng suốt chuyến đi vì tu bổ. Hoàng thành có lễ hội, cần kiểm tra lối vào / chương trình trong ngày.</div>
@@ -821,6 +844,7 @@ body{background:white}
 <section id="d3" class="panel">
 <a class="back-link" href="#day-3">← Về lịch ngày 3</a>
 <h2>Thứ Bảy · 03/10/2026 · Ninh Bình</h2>
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa một mái chèo giữa miền núi nước" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#dfe8c4"/><circle cx="725" cy="59" r="34" fill="#fff4c6"/><path d="M0 181Q35 128 71 152Q110 46 145 100Q183 160 204 74Q240-1 272 115Q300 162 337 109Q380 35 409 139Q461 198 500 95Q540 24 577 120Q612 164 643 99Q687 1 720 132Q765 188 801 74Q836 22 900 161V250H0Z" fill="#7b9e82"/><path d="M0 217Q38 72 85 106Q110 165 131 199Q173 70 205 141L225 227Q288 131 319 171L353 230Q403 113 437 183L470 218Q553 93 582 161L602 224Q669 125 711 186L746 218Q789 142 832 157L900 213V250H0Z" fill="#285f52"/><path d="M0 236Q190 212 407 237Q610 256 900 210V250H0" fill="#72b3a1"/><g stroke="#c9dfb8" stroke-width="2"><path d="M290 247h75m170-12h69m-216-9h36m343 9h82"/></g><path d="M441 229q44 19 90-3l-12 12h-62Z" fill="#edb75d" stroke="#694733" stroke-width="2"/><path d="m488 228 9-24m-2 8 31 23" stroke="#f8d994" stroke-width="3"/><path d="m484 204 14-13 15 13Z" fill="#f8e3b7"/><path d="M0 0H900" stroke="#b3c798"/></svg><figcaption><strong>Một mái chèo giữa miền núi nước</strong><span>TRÀNG AN · NINH BÌNH · MINH HỌA</span></figcaption></figure>
 <div class="info-bar"><span>🚗 Khoảng 4–5 giờ trên xe</span><span>🚤 Thuyền ~3 giờ</span><span>🥾 Đi bộ: vừa–cao</span><span>⏱ Đi lúc 06:30</span></div>
 <div class="cards">
 <article class="card" id="trang-an" tabindex="-1">
@@ -864,6 +888,7 @@ body{background:white}
 <section id="d4" class="panel">
 <a class="back-link" href="#day-4">← Về lịch ngày 4</a>
 <h2>Chủ Nhật · 04/10/2026 · Bảo tàng & về tối</h2>
+<figure class="day-visual"><svg viewBox="0 0 900 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Minh họa giữ một miền ký ức mang về" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="250" fill="#e5d6df"/><circle cx="743" cy="58" r="36" fill="#fff0c9"/><path d="M0 196H900V250H0" fill="#6f7d78"/><path d="M64 95H534V195H64Z" fill="#f8efda" stroke="#627068" stroke-width="3"/><path d="M58 88H543V102H58Z" fill="#51444f"/><g fill="#3b6058"><path d="M89 118H509V130H89zm0 23H509V153H89z"/></g><path d="M292 195V52H325V195" fill="#bca27d"/><path d="M301 52V26h15v26" fill="#51444f"/><path d="M325 75h48V46h-48Z" fill="#a92d43"/><path d="m346 52 2 5h6l-5 4 2 6-5-4-5 4 2-6-4-4h5Z" fill="#f9d46c"/><g fill="#33554a" stroke="#244437" stroke-width="3"><path d="M128 183h108l-12-17h-80zM167 165v-15h28l15 15M191 153l53-13"/><rect x="126" y="183" width="111" height="16" rx="8"/></g><g fill="#e6d6bc" stroke="#6b5252" stroke-width="4"><path d="M662 149h120v57q-60 30-120 0Z"/><path d="M782 157q52-2 32 34q-9 13-32 8" fill="none"/><ellipse cx="722" cy="149" rx="60" ry="12"/></g><ellipse cx="722" cy="149" rx="47" ry="7" fill="#734937"/><path d="M673 221q50 15 106 0" stroke="#efdfc4" stroke-width="6" fill="none"/><g stroke="#fff6e1" stroke-width="4" fill="none"><path d="M700 122q-15-17 0-31t0-28m38 59q-15-17 0-31t0-28"/></g></svg><figcaption><strong>Giữ một miền ký ức mang về</strong><span>BẢO TÀNG · CAFÉ · MINH HỌA</span></figcaption></figure>
 <div class="info-bar"><span>⭐ Bảo tàng sáng Chủ Nhật</span><span>🧳 Trả phòng trước 12:00</span><span>✈ Bay về tối</span></div>
 <div class="cards">
 <article class="card" id="military" tabindex="-1">
