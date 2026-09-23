@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hà Nội 4 ngày • Lịch trình du lịch</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#667085;--line:#e6eaf0;--accent:#b42318;--nav:#111827;--soft:#fff4ed}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#111827,#26364f);color:#fff;padding:34px 22px 28px}
+.wrap{max-width:1180px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
+h1{margin:7px 0 7px;font-size:clamp(28px,5vw,48px)} header p{margin:0;max-width:800px;color:#d7deea}
+.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap}
+.tabs .wrap{display:flex;gap:5px;padding:8px 12px}.tab{border:0;background:transparent;padding:11px 14px;border-radius:10px;font-weight:700;cursor:pointer;color:#475467}
+.tab.active{background:#111827;color:#fff}.panel{display:none;padding:24px 16px 50px}.panel.active{display:block}
+.day{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:0 0 18px;overflow:hidden;box-shadow:0 6px 20px rgba(16,24,40,.05)}
+.dayhead{padding:18px 20px;background:#fbfcfe;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:end}
+.dayhead h2{margin:0;font-size:21px}.dayhead span{color:var(--muted);font-size:13px}
+.route{display:grid;grid-template-columns:80px 62px 1fr 115px;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line);align-items:center}
+.route:last-child{border-bottom:0}.time{font-weight:800}.code{font-size:12px;font-weight:800;color:var(--accent);background:var(--soft);padding:5px 7px;border-radius:8px;text-align:center}
+.route b{display:block}.route small{color:var(--muted);line-height:1.45}.duration{font-size:13px;color:#475467;text-align:right}
+.note{margin:0 0 18px;padding:14px 16px;border-left:4px solid #f79009;background:#fffaeb;border-radius:10px;color:#7a2e0e}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 18px rgba(16,24,40,.04)}
+.card h3{margin:0 0 8px}.meta{font-size:13px;color:var(--muted);line-height:1.6}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2f6;margin:3px 4px 3px 0;font-size:12px;font-weight:700}
+.card p{line-height:1.6;font-size:14px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;text-decoration:none;padding:9px 11px;border-radius:9px;background:#111827;color:white;font-size:13px;font-weight:800}.btn.alt{background:#fff;color:#111827;border:1px solid #d0d5dd}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.stat b{font-size:20px;display:block}.stat span{font-size:12px;color:var(--muted)}
+footer{padding:25px 16px;color:#667085;text-align:center;font-size:12px}
+@media(max-width:700px){.route{grid-template-columns:65px 52px 1fr}.duration{grid-column:3;text-align:left}.summary{grid-template-columns:1fr 1fr}.dayhead{display:block}.dayhead span{display:block;margin-top:5px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">Hanoi • Ninh Binh</div>
+<h1>Hành trình 4 ngày</h1>
+<p>Hà Nội cổ • lịch sử & quân sự • Ninh Bình • café & ẩm thực. Thiết kế theo nhịp tham quan thực tế, có Google Maps cho từng điểm.</p>
+</div></header>
+
+<nav class="tabs"><div class="wrap">
+<button class="tab active" data-tab="plan">Lịch trình</button>
+<button class="tab" data-tab="d1">Ngày 1</button>
+<button class="tab" data-tab="d2">Ngày 2</button>
+<button class="tab" data-tab="d3">Ngày 3 • Ninh Bình</button>
+<button class="tab" data-tab="d4">Ngày 4</button>
+<button class="tab" data-tab="tips">Lưu ý</button>
+</div></nav>
+
+<main class="wrap">
+<section id="plan" class="panel active">
+<div class="summary">
+<div class="stat"><b>4 ngày</b><span>3 ngày Hà Nội + 1 ngày Ninh Bình</span></div>
+<div class="stat"><b>~18 điểm</b><span>tham quan + ẩm thực + café</span></div>
+<div class="stat"><b>07:00</b><span>khung giờ đẹp để bắt đầu</span></div>
+<div class="stat"><b>Ngày 3</b><span>Tràng An + Hang Múa</span></div>
+</div>
+<p class="note"><b>Lưu ý quan trọng:</b> Bảo tàng Lịch sử Quân sự ở cơ sở mới Km 6+500 Đại lộ Thăng Long, khá xa trung tâm; lịch dưới đây dành riêng một block di chuyển. Bảo tàng thường đóng thứ Hai và thứ Sáu. Giờ mở cửa có thể thay đổi dịp lễ/bảo trì, nên kiểm tra lại trước chuyến đi.</p>
+
+<div class="day"><div class="dayhead"><div><h2>Ngày 1 • Hà Nội cổ & ẩm thực</h2><span>Nhẹ nhàng sau chuyến bay • chủ yếu đi bộ</span></div></div>
+<div class="route"><div class="time">Sáng</div><div class="code">1.1</div><div><b>TP.HCM → Hà Nội → khách sạn</b><small>Gửi hành lý / nhận phòng</small></div><div class="duration">~3–4 giờ</div></div>
+<div class="route"><div class="time">11:30</div><div class="code">1.2</div><div><b>Phở Hà Nội</b><small>Bữa trưa đầu tiên tại thủ đô</small></div><div class="duration">45–60 phút</div></div>
+<div class="route"><div class="time">13:00</div><div class="code">1.3</div><div><b>Hồ Hoàn Kiếm → Đền Ngọc Sơn</b><small>Điểm mở đầu, mốc trung tâm của hành trình</small></div><div class="duration">60 phút</div></div>
+<div class="route"><div class="time">14:15</div><div class="code">1.4</div><div><b>Phố cổ Hà Nội</b><small>Dạo Hàng Đào – Hàng Bạc – Mã Mây và các phố lân cận</small></div><div class="duration">90 phút</div></div>
+<div class="route"><div class="time">16:00</div><div class="code">1.5</div><div><b>Nhà thờ Lớn</b><small>Kiến trúc + khu café quanh Nhà Chung</small></div><div class="duration">30–45 phút</div></div>
+<div class="route"><div class="time">17:00</div><div class="code">1.6</div><div><b>Café trứng Hà Nội</b><small>Nghỉ chân trước buổi tối</small></div><div class="duration">45 phút</div></div>
+<div class="route"><div class="time">18:30</div><div class="code">1.7</div><div><b>Bún chả Hà Nội</b><small>Ăn tối</small></div><div class="duration">60 phút</div></div>
+<div class="route"><div class="time">20:00</div><div class="code">1.8</div><div><b>Tạ Hiện → phố đi bộ / chợ đêm</b><small>Có thể thêm một quán café Hà Nội buổi tối, ngồi ban công/rooftop nhìn phố</small></div><div class="duration">2–2.5 giờ</div></div>
+</div>
+
+<div class="day"><div class="dayhead"><div><h2>Ngày 2 • Lịch sử, quân sự & Hồ Tây</h2><span>Ngày dày nhất • ưu tiên xuất phát sớm</span></div></div>
+<div class="route"><div class="time">07:15</div><div class="code">2.1</div><div><b>Lăng Bác → Quảng trường Ba Đình</b><small>Ưu tiên buổi sáng vì khung giờ viếng hạn chế</small></div><div class="duration">60–75 phút</div></div>
+<div class="route"><div class="time">08:30</div><div class="code">2.2</div><div><b>Chùa Một Cột</b><small>Ngay trong cụm Ba Đình</small></div><div class="duration">20–30 phút</div></div>
+<div class="route"><div class="time">09:15</div><div class="code">2.3</div><div><b>Văn Miếu – Quốc Tử Giám</b><small>Không gian lịch sử, kiến trúc và giáo dục</small></div><div class="duration">75–90 phút</div></div>
+<div class="route"><div class="time">11:00</div><div class="code">2.4</div><div><b>Di chuyển → Bảo tàng Lịch sử Quân sự</b><small>Cơ sở mới phía Tây Hà Nội</small></div><div class="duration">30–45 phút</div></div>
+<div class="route"><div class="time">11:45</div><div class="code">2.5</div><div><b>Ăn trưa / nghỉ</b><small>Nên ăn gần khu bảo tàng</small></div><div class="duration">60 phút</div></div>
+<div class="route"><div class="time">13:00</div><div class="code">2.6</div><div><b>Bảo tàng Lịch sử Quân sự Việt Nam 🇻🇳</b><small>Ưu tiên khu trưng bày chính + khí tài ngoài trời</small></div><div class="duration">2–2.5 giờ</div></div>
+<div class="route"><div class="time">15:30</div><div class="code">2.7</div><div><b>Hoàng thành Thăng Long</b><small>Nếu giao thông thuận lợi; xem trọng điểm thay vì toàn bộ</small></div><div class="duration">60–75 phút</div></div>
+<div class="route"><div class="time">16:45</div><div class="code">2.8</div><div><b>Phan Đình Phùng → Chùa Trấn Quốc → Hồ Tây</b><small>Chụp ảnh và kết thúc ngày bằng hoàng hôn</small></div><div class="duration">1.5–2 giờ</div></div>
+<div class="route"><div class="time">19:00</div><div class="code">2.9</div><div><b>Ăn tối + café Hà Nội / Hồ Tây</b><small>Buổi tối thư giãn, không thêm di tích</small></div><div class="duration">2 giờ</div></div>
+</div>
+
+<div class="day"><div class="dayhead"><div><h2>Ngày 3 • Ninh Bình</h2><span>Thiên nhiên • thuyền • leo núi</span></div></div>
+<div class="route"><div class="time">06:30</div><div class="code">3.1</div><div><b>Hà Nội → Ninh Bình</b><small>Xuất phát sớm để tránh mất thời gian đẹp ở Tràng An</small></div><div class="duration">2–2.5 giờ</div></div>
+<div class="route"><div class="time">09:00</div><div class="code">3.2</div><div><b>Tràng An</b><small>Đi thuyền xuyên hang, núi đá vôi</small></div><div class="duration">2.5–3 giờ</div></div>
+<div class="route"><div class="time">12:15</div><div class="code">3.3</div><div><b>Đặc sản Ninh Bình</b><small>Dê núi, cơm cháy</small></div><div class="duration">60–75 phút</div></div>
+<div class="route"><div class="time">14:00</div><div class="code">3.4</div><div><b>Hang Múa</b><small>Leo núi, ngắm toàn cảnh Tam Cốc</small></div><div class="duration">2–2.5 giờ</div></div>
+<div class="route"><div class="time">16:30</div><div class="code">3.5</div><div><b>Ninh Bình → Hà Nội</b><small>Về khách sạn, ăn tối và nghỉ</small></div><div class="duration">2–2.5 giờ</div></div>
+</div>
+
+<div class="day"><div class="dayhead"><div><h2>Ngày 4 • Hà Nội chậm & mua quà</h2><span>Giữ buffer cho sân bay</span></div></div>
+<div class="route"><div class="time">07:00</div><div class="code">4.1</div><div><b>Ăn sáng</b><small>Bánh cuốn / xôi / món chưa thử</small></div><div class="duration">45–60 phút</div></div>
+<div class="route"><div class="time">08:00</div><div class="code">4.2</div><div><b>Dạo Hồ Gươm lần cuối</b><small>Không khí buổi sáng, chụp ảnh</small></div><div class="duration">60 phút</div></div>
+<div class="route"><div class="time">09:00</div><div class="code">4.3</div><div><b>Mua đặc sản</b><small>Cốm, bánh cốm, ô mai, trà, cà phê</small></div><div class="duration">60–90 phút</div></div>
+<div class="route"><div class="time">10:30</div><div class="code">4.4</div><div><b>Café + checkout</b><small>Khoảng nghỉ trước chuyến bay</small></div><div class="duration">60 phút</div></div>
+<div class="route"><div class="time">11:30</div><div class="code">4.5</div><div><b>Ăn trưa → Nội Bài → TP.HCM</b><small>Nên rời trung tâm đủ sớm theo giờ bay</small></div><div class="duration">Theo chuyến bay</div></div>
+</div>
+</section>
+
+<section id="d1" class="panel">
+<h2>Ngày 1 • Hà Nội cổ</h2>
+<div class="cards">
+<div class="card"><h3>1.3 Hồ Hoàn Kiếm & Đền Ngọc Sơn</h3><div class="meta"><span class="pill">0 km từ mốc trung tâm</span><span class="pill">~60 phút</span><br>Đền Ngọc Sơn: Đinh Tiên Hoàng, Hoàn Kiếm, Hà Nội.</div><p>Biểu tượng trung tâm Hà Nội. Đi qua cầu Thê Húc, tham quan Đền Ngọc Sơn rồi đi bộ quanh hồ. Giờ công bố của khu đền: 07:00–19:00 từ Thứ 2–5; 07:00–22:00 Thứ 6–CN và lễ/Tết.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">Google Maps</a><a class="btn alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ngoc+Son+Temple+Hanoi">Đền Ngọc Sơn</a></div></div>
+<div class="card"><h3>1.4 Phố cổ Hà Nội</h3><div class="meta"><span class="pill">~0.5 km</span><span class="pill">90 phút + buổi tối</span></div><p>Không phải một điểm đơn lẻ mà là khu phố để đi bộ, quan sát kiến trúc, hàng quán và nhịp sống. Nên quay lại buổi tối để trải nghiệm không khí khác hẳn ban ngày.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter">Google Maps</a></div></div>
+<div class="card"><h3>1.5 Nhà thờ Lớn Hà Nội</h3><div class="meta"><span class="pill">~0.5 km</span><span class="pill">30–45 phút</span><br>1 phố Nhà Thờ, Hoàn Kiếm.</div><p>Điểm kiến trúc nổi bật ở khu trung tâm. Nên dành thời gian cho quảng trường nhỏ phía trước và các phố café lân cận; lưu ý giờ vào bên trong có thể phụ thuộc thánh lễ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=St+Joseph+Cathedral+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>1.6 Café trứng</h3><div class="meta"><span class="pill">Khu Hoàn Kiếm</span><span class="pill">~45 phút</span></div><p>Đây là “khoảng nghỉ trải nghiệm” của ngày đầu. Chọn quán thuận tuyến Phố cổ – Nhà thờ Lớn thay vì chạy xa chỉ vì một quán cụ thể.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=egg+coffee+Hoan+Kiem+Hanoi">Tìm café trứng</a></div></div>
+<div class="card"><h3>1.8 Tạ Hiện & phố đêm</h3><div class="meta"><span class="pill">~0.8 km</span><span class="pill">2–2.5 giờ</span></div><p>Phù hợp sau 20:00. Có thể kết hợp Tạ Hiện, Mã Mây, Hàng Buồm và quay lại Hồ Gươm. Nếu đúng cuối tuần, ưu tiên khu phố đi bộ/chợ đêm.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ta+Hien+Street+Hanoi">Google Maps</a></div></div>
+</div></section>
+
+<section id="d2" class="panel">
+<h2>Ngày 2 • Lịch sử, quân sự & Hồ Tây</h2>
+<p class="note">Bảo tàng Lịch sử Quân sự thường mở Thứ 3, 4, 5, 7, CN và đóng Thứ 2, Thứ 6. Nếu Ngày 2 rơi vào ngày đóng cửa, nên đổi Ngày 1 ↔ Ngày 2 hoặc đổi thứ tự ngày trong chuyến đi.</p>
+<div class="cards">
+<div class="card"><h3>2.1 Lăng Chủ tịch Hồ Chí Minh</h3><div class="meta"><span class="pill">~2.5 km từ Hồ Gươm</span><span class="pill">60–75 phút</span><br>1 Hùng Vương, Ba Đình.</div><p>Điểm cần ưu tiên sớm nhất vì giờ viếng buổi sáng hạn chế. Thông tin địa điểm phổ biến: khoảng 07:30–10:30 vào các ngày mở cửa. Có kiểm tra an ninh và quy định trang phục.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>2.2 Chùa Một Cột</h3><div class="meta"><span class="pill">Đi bộ từ Lăng</span><span class="pill">20–30 phút</span></div><p>Biểu tượng kiến trúc nhỏ nhưng nổi tiếng, phù hợp ghép trực tiếp sau Lăng và Quảng trường Ba Đình.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=One+Pillar+Pagoda+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>2.3 Văn Miếu – Quốc Tử Giám</h3><div class="meta"><span class="pill">~2 km từ Hồ Gươm</span><span class="pill">75–90 phút</span><br>58 Quốc Tử Giám, Hà Nội.</div><p>Quần thể gắn với truyền thống giáo dục và khoa bảng Việt Nam. Nên đi trước giữa trưa để dễ chụp ảnh và đỡ mệt.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>2.6 Bảo tàng Lịch sử Quân sự Việt Nam 🇻🇳</h3><div class="meta"><span class="pill">~12 km từ Hồ Gươm</span><span class="pill">2–2.5 giờ</span><br>Km 6+500, Đại lộ Thăng Long, Xuân Phương, Hà Nội.</div><p>Cơ sở mới quy mô lớn, có trưng bày trong nhà và khí tài ngoài trời. Lịch tham khảo hiện hành: 08:00–16:30 vào Thứ 3, 4, 5, 7, CN; đóng Thứ 2 và Thứ 6. Đây là điểm cần dành thời gian thực sự, không nên chỉ ghé 1 giờ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+Km6%2B500+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>2.7 Hoàng thành Thăng Long</h3><div class="meta"><span class="pill">~2 km từ Hồ Gươm</span><span class="pill">60–75 phút bản rút gọn</span><br>19C Hoàng Diệu, Ba Đình.</div><p>Di sản thế giới UNESCO. Giờ tham khảo: 08:00–17:00. Vì Ngày 2 đã có bảo tàng quân sự, lịch này ưu tiên các khu chính; nếu muốn xem kỹ nên dành 1.5–2 giờ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long">Google Maps</a></div></div>
+<div class="card"><h3>2.8 Phan Đình Phùng</h3><div class="meta"><span class="pill">~2.5 km</span><span class="pill">20–30 phút</span></div><p>Tuyến phố cây xanh và kiến trúc đẹp, phù hợp làm chặng chuyển tiếp từ khu Ba Đình sang Hồ Tây thay vì xem như một điểm tham quan dài.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Phan+Dinh+Phung+Street+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>2.8 Chùa Trấn Quốc & Hồ Tây</h3><div class="meta"><span class="pill">~3.5 km</span><span class="pill">1.5–2 giờ cả cụm</span><br>46 Thanh Niên, Tây Hồ.</div><p>Chùa Trấn Quốc thường có hai khung 07:30–11:00 và 13:30–17:00. Vì vậy nên vào chùa trước 17:00, sau đó dành hoàng hôn cho Hồ Tây.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tran+Quoc+Pagoda+Hanoi">Chùa Trấn Quốc</a><a class="btn alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi">Hồ Tây</a></div></div>
+<div class="card"><h3>2.9 Café Hà Nội buổi tối</h3><div class="meta"><span class="pill">Hồ Tây hoặc Hoàn Kiếm</span><span class="pill">60–90 phút</span></div><p>Sau ngày tham quan dày, nên chọn café có không gian ngồi lâu thay vì thêm điểm check-in. Nếu còn sức có thể về khu phố cổ; nếu không, ở Hồ Tây sẽ tối ưu di chuyển hơn.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=cafe+West+Lake+Hanoi">Café Hồ Tây</a></div></div>
+</div></section>
+
+<section id="d3" class="panel">
+<h2>Ngày 3 • Ninh Bình</h2>
+<div class="cards">
+<div class="card"><h3>3.2 Tràng An</h3><div class="meta"><span class="pill">~95 km từ Hồ Gươm</span><span class="pill">2.5–3 giờ</span><br>Tràng An, Hoa Lư, Ninh Bình.</div><p>Trải nghiệm thuyền xuyên qua hệ thống núi đá vôi, hang và cảnh quan di sản. Khu du lịch thường hoạt động khoảng 07:00–17:00; đến buổi sáng giúp tránh nắng gắt và giữ đủ thời gian cho Hang Múa.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Trang+An+Ninh+Binh">Google Maps</a></div></div>
+<div class="card"><h3>3.4 Hang Múa</h3><div class="meta"><span class="pill">~8–10 km từ Tràng An</span><span class="pill">2–2.5 giờ</span><br>Nam Hoa Lư, Ninh Bình.</div><p>Điểm nổi bật là cung đường leo bậc đá lên đỉnh ngắm Tam Cốc. Chuẩn bị giày bám tốt, nước uống và tránh leo quá gấp ngay sau bữa trưa. Trời quang sẽ quyết định rất nhiều đến trải nghiệm.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hang+Mua+Ninh+Binh">Google Maps</a></div></div>
+</div></section>
+
+<section id="d4" class="panel">
+<h2>Ngày 4 • Chậm lại trước khi về</h2>
+<div class="cards">
+<div class="card"><h3>4.2 Hồ Gươm buổi sáng</h3><div class="meta"><span class="pill">0 km</span><span class="pill">60 phút</span></div><p>Quay lại cùng một địa điểm nhưng vào buổi sáng tạo trải nghiệm khác Ngày 1: ít vội, nhiều sinh hoạt địa phương, thích hợp chụp ảnh và đi bộ nhẹ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi">Google Maps</a></div></div>
+<div class="card"><h3>4.3 Mua đặc sản</h3><div class="meta"><span class="pill">Khu trung tâm</span><span class="pill">60–90 phút</span></div><p>Danh sách gợi ý: cốm/bánh cốm, ô mai, trà và cà phê. Ưu tiên hàng đóng gói gọn, có nhãn rõ ràng để mang lên máy bay thuận tiện.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanoi+specialty+shop+Hoan+Kiem">Tìm trên Maps</a></div></div>
+<div class="card"><h3>4.4 Café cuối chuyến</h3><div class="meta"><span class="pill">Gần khách sạn</span><span class="pill">~60 phút</span></div><p>Không nên đi xa. Dùng block này làm buffer để checkout, đóng hành lý và điều chỉnh nếu các hoạt động buổi sáng bị trễ.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=cafe+Hoan+Kiem+Hanoi">Tìm café gần Hồ Gươm</a></div></div>
+</div></section>
+
+<section id="tips" class="panel">
+<h2>Lưu ý vận hành chuyến đi</h2>
+<div class="cards">
+<div class="card"><h3>Giờ mở cửa</h3><p>Lăng Bác và Bảo tàng Lịch sử Quân sự là hai điểm cần kiểm tra kỹ nhất trước chuyến đi. Lăng có lịch viếng theo ngày/mùa và có đợt bảo trì định kỳ; Bảo tàng Quân sự thường đóng Thứ 2 và Thứ 6.</p></div>
+<div class="card"><h3>Khoảng cách</h3><p>Các con số trên là khoảng cách định hướng từ Hồ Hoàn Kiếm hoặc giữa các điểm chính, không phải cam kết quãng đường lái xe. Google Maps sẽ tự tính tuyến thực tế theo giao thông tại thời điểm đi.</p></div>
+<div class="card"><h3>Ngày 2 khá dày</h3><p>Nếu Bảo tàng Quân sự khiến lịch chậm, hãy rút Hoàng thành còn khoảng 60 phút và xem Phan Đình Phùng như chặng đi ngang. Không nên cắt thời gian bảo tàng xuống dưới khoảng 2 giờ.</p></div>
+<div class="card"><h3>Ninh Bình</h3><p>Tràng An + Hang Múa là đủ cho một ngày. Thời tiết xấu hoặc mưa lớn nên ưu tiên an toàn và giảm phần leo Hang Múa.</p></div>
+<div class="card"><h3>Sân bay</h3><p>Ngày 4 giữ lịch nhẹ. Từ trung tâm Hà Nội đến Nội Bài cần chừa thêm buffer cho giao thông và thời gian làm thủ tục chuyến bay nội địa.</p></div>
+</div></section>
+</main>
+
+<footer>Dữ liệu giờ mở cửa là thông tin tham khảo tại thời điểm xây dựng trang. Hãy kiểm tra lại website/Google Maps chính thức trước ngày đi.</footer>
+<script>
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active'); document.getElementById(btn.dataset.tab).classList.add('active');
+ window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'});
+}));
+</script>
+</body></html>
